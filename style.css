@@ -17,6 +17,13 @@ html {
 button {
     border: none;
 }
+
+.fluid {
+    width: 100%;
+}
+
+
+
 button:hover {
     cursor: pointer;
     opacity: 0.8

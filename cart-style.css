@@ -14,7 +14,7 @@
 
 .table-cart .line-item {
     position: relative;
-    border-bottom: 2px solid rgb(121, 121, 121);
+    border-bottom: 2px solid #ccc;
 
 }
 .table-cart .line-item .item-image {
@@ -32,8 +32,7 @@
 }
 
 .table-cart .line-item .item-remove {
-    /* position: absolute;
-    right: 0; */
+    float: right;
 }
 
 
@@ -53,6 +52,56 @@
     bottom: 8px; */
     /* color: rgb(168, 1, 1); */
 }
+
+.sidebox-order {
+    border: 2px solid #ccc;
+    padding: 16px
+}
+
+.sidebox-order .sidebox-order-action {
+
+}
+.sidebox-order .sidebox-order-action button {
+    background-color: rgb(143, 28, 28);
+    color: white;
+    padding: 20px 0;
+    font-size: 22px;
+    margin-bottom:8px
+}
+
+.sidebox-order .sidebox-order-action a {
+    display: block;
+    text-align: center;
+    font-size: 18px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
