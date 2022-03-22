@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <div class="grid">
+            <div class="left-col__header">
+                <a href="index.html"><img src="./assets/img/logo.png" alt="" class="logo"></a>
+                <h1 style="text-transform: capitalize">boss brand</h1>
+            </div>
+            <div class="container">
+                <div class="left-col">
+                    <div class="left-col__info">
+                        <h2>Thông tin giao hàng</h2>
+                        <form action="" class="user-info">
+                            <input type="text" class="user-name" placeholder="Họ và tên" required="">
+                            <div class="contact-wrapper">
+                                <input type="email" class="user-mail" placeholder="Email">
+                                <input type="number" class="user-tel" placeholder="Số điện thoại" required="">
+                            </div>
+                            <input type="text" class="user-address" placeholder="Nhập số nhà, ngõ (nếu có), đường/phố, ..." required="">
+                            <div class="address-wrapper">
+                                <select class="local-picker" name="provinces" required=""><option value="" selected="" disabled="" hidden="">Chọn Tỉnh / Thành phố</option><option value="1" data-name="thanh_pho_ha_noi">Thành phố Hà Nội</option><option value="2" data-name="tinh_ha_giang">Tỉnh Hà Giang</option><option value="4" data-name="tinh_cao_bang">Tỉnh Cao Bằng</option><option value="6" data-name="tinh_bac_kan">Tỉnh Bắc Kạn</option><option value="8" data-name="tinh_tuyen_quang">Tỉnh Tuyên Quang</option><option value="10" data-name="tinh_lao_cai">Tỉnh Lào Cai</option><option value="11" data-name="tinh_dien_bien">Tỉnh Điện Biên</option><option value="12" data-name="tinh_lai_chau">Tỉnh Lai Châu</option><option value="14" data-name="tinh_son_la">Tỉnh Sơn La</option><option value="15" data-name="tinh_yen_bai">Tỉnh Yên Bái</option><option value="17" data-name="tinh_hoa_binh">Tỉnh Hoà Bình</option><option value="19" data-name="tinh_thai_nguyen">Tỉnh Thái Nguyên</option><option value="20" data-name="tinh_lang_son">Tỉnh Lạng Sơn</option><option value="22" data-name="tinh_quang_ninh">Tỉnh Quảng Ninh</option><option value="24" data-name="tinh_bac_giang">Tỉnh Bắc Giang</option><option value="25" data-name="tinh_phu_tho">Tỉnh Phú Thọ</option><option value="26" data-name="tinh_vinh_phuc">Tỉnh Vĩnh Phúc</option><option value="27" data-name="tinh_bac_ninh">Tỉnh Bắc Ninh</option><option value="30" data-name="tinh_hai_duong">Tỉnh Hải Dương</option><option value="31" data-name="thanh_pho_hai_phong">Thành phố Hải Phòng</option><option value="33" data-name="tinh_hung_yen">Tỉnh Hưng Yên</option><option value="34" data-name="tinh_thai_binh">Tỉnh Thái Bình</option><option value="35" data-name="tinh_ha_nam">Tỉnh Hà Nam</option><option value="36" data-name="tinh_nam_dinh">Tỉnh Nam Định</option><option value="37" data-name="tinh_ninh_binh">Tỉnh Ninh Bình</option><option value="38" data-name="tinh_thanh_hoa">Tỉnh Thanh Hóa</option><option value="40" data-name="tinh_nghe_an">Tỉnh Nghệ An</option><option value="42" data-name="tinh_ha_tinh">Tỉnh Hà Tĩnh</option><option value="44" data-name="tinh_quang_binh">Tỉnh Quảng Bình</option><option value="45" data-name="tinh_quang_tri">Tỉnh Quảng Trị</option><option value="46" data-name="tinh_thua_thien_hue">Tỉnh Thừa Thiên Huế</option><option value="48" data-name="thanh_pho_da_nang">Thành phố Đà Nẵng</option><option value="49" data-name="tinh_quang_nam">Tỉnh Quảng Nam</option><option value="51" data-name="tinh_quang_ngai">Tỉnh Quảng Ngãi</option><option value="52" data-name="tinh_binh_dinh">Tỉnh Bình Định</option><option value="54" data-name="tinh_phu_yen">Tỉnh Phú Yên</option><option value="56" data-name="tinh_khanh_hoa">Tỉnh Khánh Hòa</option><option value="58" data-name="tinh_ninh_thuan">Tỉnh Ninh Thuận</option><option value="60" data-name="tinh_binh_thuan">Tỉnh Bình Thuận</option><option value="62" data-name="tinh_kon_tum">Tỉnh Kon Tum</option><option value="64" data-name="tinh_gia_lai">Tỉnh Gia Lai</option><option value="66" data-name="tinh_dak_lak">Tỉnh Đắk Lắk</option><option value="67" data-name="tinh_dak_nong">Tỉnh Đắk Nông</option><option value="68" data-name="tinh_lam_dong">Tỉnh Lâm Đồng</option><option value="70" data-name="tinh_binh_phuoc">Tỉnh Bình Phước</option><option value="72" data-name="tinh_tay_ninh">Tỉnh Tây Ninh</option><option value="74" data-name="tinh_binh_duong">Tỉnh Bình Dương</option><option value="75" data-name="tinh_dong_nai">Tỉnh Đồng Nai</option><option value="77" data-name="tinh_ba_ria_vung_tau">Tỉnh Bà Rịa - Vũng Tàu</option><option value="79" data-name="thanh_pho_ho_chi_minh">Thành phố Hồ Chí Minh</option><option value="80" data-name="tinh_long_an">Tỉnh Long An</option><option value="82" data-name="tinh_tien_giang">Tỉnh Tiền Giang</option><option value="83" data-name="tinh_ben_tre">Tỉnh Bến Tre</option><option value="84" data-name="tinh_tra_vinh">Tỉnh Trà Vinh</option><option value="86" data-name="tinh_vinh_long">Tỉnh Vĩnh Long</option><option value="87" data-name="tinh_dong_thap">Tỉnh Đồng Tháp</option><option value="89" data-name="tinh_an_giang">Tỉnh An Giang</option><option value="91" data-name="tinh_kien_giang">Tỉnh Kiên Giang</option><option value="92" data-name="thanh_pho_can_tho">Thành phố Cần Thơ</option><option value="93" data-name="tinh_hau_giang">Tỉnh Hậu Giang</option><option value="94" data-name="tinh_soc_trang">Tỉnh Sóc Trăng</option><option value="95" data-name="tinh_bac_lieu">Tỉnh Bạc Liêu</option><option value="96" data-name="tinh_ca_mau">Tỉnh Cà Mau</option></select>
+                                <select class="local-picker" name="districts" required=""><option value="" selected="" disabled="" hidden="">Chọn Quận / Huyện</option></select>
+                                <select class="local-picker" name="wards" required=""><option value="" selected="" disabled="" hidden="">Chọn Phường / Xã</option></select>
+                            </div>
+
+                            <h2>Phương thức thanh toán</h2>
+                            <div class="transport-method">
+                                <div class="home-wrapper">
+                                    <input type="radio" name="transport" id="home" value="home" checked="">
+                                    <label for="home">Giao hàng tận nơi (Toàn quốc)</label>
+                                </div>
+                                <div class="shop-wrapper" style="display: none;">
+                                    <input type="radio" name="transport" id="shop" value="shop">
+                                    <label for="shop">Nhận hàng trực tiếp tại cửa hàng</label>
+                                </div>
+                            </div>
+
+                            <h2>Phương thức vận chuyển</h2>
+                            <div class="pay-method">
+                                <div class="cod-wrapper">
+                                    <input type="radio" name="pay" id="cod" value="cod" checked="">
+                                    <label for="cod">Thanh toán khi nhận hàng (COD)</label>
+                                </div>
+                                <div class="atm-wrapper">
+                                    <input type="radio" name="pay" id="atm" value="atm">
+                                    <label for="atm">Thanh toán bằng thẻ ngân hàng</label>
+                                </div>
+                            </div>
+
+                            <button id="submit" type="submit">Hoàn tất đơn hàng</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="right-col">
+                    <div class="right-col__content">
+            <div class="product">
+                <div class="product-wrapper">
+                    <div class="product_img">
+                        <img src="./assets/img/t-shirts/tshirt7.jpg" alt="" style="width: 100%">
+                    </div>
+                    <div class="product_info">
+                        <h3>Ananas Typo - White</h3>
+                        <p class="size">Size: S</p>
+                        <div class="quantity-input">
+                            <div class="minus">
+                                <i class="bx bx-minus"></i>
+                            </div>
+                            <input type="number" class="number" value="1" name="quantity" min="0">
+                            <div class="add">
+                                <i class="bx bx-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span> <span class="product_price">269.000 VND </span> <i class="material-icons" title="Xóa khỏi giỏ hàng">remove_shopping_cart</i> </span>
+            </div>
+        </div>
+
+                    <div class="promotion">
+                        <div class="promotion-form">
+                            <input type="text" class="promotion-form-input" placeholder="Nhập mã giảm giá">
+                            <button class="promotion-form-button">Sử dụng</button>
+                        </div>
+                        <div class="discount-wrapper"></div>
+                    </div>
+
+                    <div class="price-wrapper">
+                        <div class="price-line">
+                            <p class="price_name">Tạm tính</p>
+                            <p class="price">269.000 VND</p>
+                        </div>
+
+                        <div class="price-line">
+                            <p class="price_name">Phí vận chuyển</p>
+                            <p class="shipping-price">0 VND</p>
+                        </div>
+
+                        <div class="price-line">
+                            <p class="price_name">Giảm giá</p>
+                            <p class="discount">0 VND</p>
+                        </div>
+                    </div>
+
+                    <div class="total">
+                        <p class="total_name">Tổng thanh toán</p>
+                        <p class="total_price">269.000 VND</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box" style="display: none;"></div>
+    </div>
+</body>
+</html>

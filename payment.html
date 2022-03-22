@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOW</title>
+
+    <link rel="stylesheet" href="gridOG.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="payment-style.css">
+    
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link rel="stylesheet" href="/slideShow.css"> -->
+</head>
+<body>
+    
+    <main>
+        <div class="container section row">
+            <div class="payment-info-section col l-7">
+                <div class="payment-header">
+                    <h1>NOWSAIGON</h1>
+                    <h3>Thông tin giao hàng</h3>
+                    <p>Bạn đã có tài khoản?<a style="color: rgb(143,28,28)" href="login.html"> Đăng nhập</a></p>
+                </div>
+
+                <form class="field-required" action="">
+                    <div class="field">
+                        <label class="row" for="billing_full_name">Họ và tên</label>
+                        <input class="row" type="text" id="billing_full_name">
+                    </div>
+                    <div class="field row">
+                        <div class="col l-8">
+                            <label class="row" for="billing_email">Email</label>
+                            <input class="row" type="email" id="billing_email">
+                        </div>
+
+                        <div class="col l-4">
+                            <label class="row" for="billing_phone_number">Số điện thoại</label>
+                            <input class="row" type="tel" id="billing_phone_number">
+                        </div>
+                        
+                    </div>
+                    <div class="field">
+                        <label class="row" for="billing_address">Địa chỉ</label>
+                        <input class="row" type="text" id="billing_address">
+                    </div>
+                    
+                    <form action="" class="payment-method field">
+                        <h3>Phương thức thanh toán</h3>
+                        <div class="row">
+                            <input class="col l-2" type="radio" id="payment_cod" name="method" value="Bike">
+                            <label class="col l-10" for="payment_cod"><h4>Thanh toán khi nhận hàng (COD)</h4></label><br>
+                        </div>
+                        <div class="row">
+                            <input class="col l-2" type="radio" id="payment_card" name="method" value="Car">
+                            <label class="col l-10" for="payment_card"><h4>Thanh toán qua thẻ tín dụng</h4></label><br>
+                        </div>
+                        
+                    </form>
+                    
+                </form>
+
+                <div class="payment-action">
+                    <a href="cart.html"><i class="fa-solid fa-angle-left"></i> Giỏ Hàng</a>
+                    <button type="submit" class="billing-confirm-btn hero-btn-full">Hoàn tất đơn hàng</button>
+
+                </div>
+            </div>
+
+
+
+            <div class="sidebar col l-5">
+                <div class="billing-list underline">
+                    <div class="billing-item row">
+                        <img src="./product-image/top/tshirt/11111f.jpg" alt="">
+                        <div class="col l-7">
+                            <h4>Mini Signature Hoodie / Seafoam Color </h4>
+                            <p>M / Green</p>
+                            <p>Số lượng: 1</p>
+                        </div>
+                        <h3>180000đ</h3>
+                    </div>
+                    
+                    <div class="billing-item row">
+                        <img src="./product-image/top/tshirt/11111f.jpg" alt="">
+                        <div class="col l-7">
+                            <h4>Mini Signature Hoodie / Seafoam Color </h4>
+                            <p>M / Green</p>
+                            <p>Số lượng: 1</p>
+                        </div>
+                        <h3>180000đ</h3>
+                    </div>
+                </div>
+
+                
+                <div class="discount-section underline">
+                    <h3>Nhập mã khuyến mãi</h3>
+                    <input class="col" type="text" placeholder="Nhập mã giảm giá">
+                    <button class="btn-apply s-hero-btn col">ÁP DỤNG</button>
+                </div>
+
+                <div class="billing-amount row underline">
+                    <div class="billing-cost row">
+                        <h3>Tạm tính:</h3>
+                        <span class="billing-temporary-amount">360000đ</span>
+                    </div>
+                    <div class="billing-cost row">
+                        <h3>Giảm giá:</h3>
+                        <span class="billing-discount-amount">50000đ</span>
+                    </div>
+                    <div class="billing-cost row">
+                        <h3>Phí vận chuyển:</h3>
+                        <span class="billing-discount-amount">30000đ</span>
+                    </div>
+                </div>
+
+                <div class="billing-total-amount section">
+                    
+                    <h1>Tổng cộng:</h1>
+                    <span class="billing-final-amount">30000đ</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+
+    
+
+    <script src="https://kit.fontawesome.com/bca5eda4f7.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>

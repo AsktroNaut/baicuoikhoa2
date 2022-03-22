@@ -322,7 +322,11 @@ main {
 
 
 
-
+.product-display .product-header {
+    margin-top: 24px;
+    display: inline;
+    line-height: 76px;
+}
 
 .product-card {
     padding-top: 32px;

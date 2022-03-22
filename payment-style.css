@@ -1,0 +1,107 @@
+
+.block {
+    display: block;
+}
+.field {
+    padding: 4px
+}
+
+
+.payment-info-section {
+    padding-right: 24px;
+}
+.field-required {
+    margin: 12px 0;
+}
+.field-required input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px
+}
+
+
+.field-required .payment-method input {
+    
+}
+
+.payment-info-section .payment-action a {
+    line-height: 48px;
+    color: rgb(143, 28, 28)
+}
+.payment-info-section .payment-action .billing-confirm-btn {
+    float: right;
+}
+
+
+
+
+.sidebar {
+    padding-left: 24px;
+    border-left: 1px solid #ccc;
+}
+
+.sidebar .billing-item {
+    padding: 12px 0
+}
+
+.sidebar .billing-item >img {
+    width:80px;
+}
+
+.sidebar .billing-item h3 {
+    line-height: 84px;
+    padding: auto;
+}
+
+
+
+.sidebar .discount-section {
+    width: 100%;
+    padding: 24px 0
+}
+
+.sidebar .discount-section h3 {
+    margin-bottom: 12px
+}
+
+.sidebar .discount-section > input {
+    width: 80%;
+    padding: 8px 12px;
+}
+
+
+.sidebar .billing-amount {
+    display: block;
+    padding: 24px 0
+    
+}
+
+.sidebar .billing-amount .billing-temporary-amount {
+    
+    
+}
+
+.sidebar .billing-amount .billing-cost {
+    justify-content: space-between;
+    width: 95%;
+    margin-left: 12px;
+}
+
+.sidebar .billing-total-amount {
+
+}
+
+.sidebar .billing-total-amount .billing-final-amount {
+    font-size: 54px;
+    color: rgb(143, 28, 28)
+}
+
+
+
+
+
+
+
+
+
+
