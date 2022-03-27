@@ -14,6 +14,10 @@ html {
     color: #000;
 }
 
+.non-display {
+    display: none !important;
+}
+
 button {
     border: none;
 }
@@ -35,7 +39,7 @@ button:hover {
 .clearfix::after {
     content: "";
     clear: both;
-    display: inline;
+    display: table;
   }
 
 .section { 
@@ -70,7 +74,7 @@ header {
     background-color: white;
     box-shadow: 0 -14px 71px -2px #00000078;
     transition: 0.2s ease;
-    z-index: 999;
+    z-index: 12;
     
 }
 
@@ -88,7 +92,7 @@ header .menu {
 
 header .menu .menu-item {
     float: right;
-    margin-left: 16px;
+    margin-left: 24px;
     color: white;
     line-height: 24px;
     transition: all 0.2s ease;
@@ -98,6 +102,9 @@ header .menu .menu-item:hover {
     cursor: pointer;
 }
 
+header .menu .menu-item > i {
+    padding-right: 8px
+}
 
 header .navbar {
     
@@ -340,17 +347,23 @@ main {
 }
 .product-card .product-frame .product-img-back,
 .product-card .product-frame .product-img {
-    width: 100%;
+    width: 156px !important
 
 }
+
+.product-detail .product-slide .product-img-back,
 .product-card .product-frame .product-img-back {
     display: none;
     
 
 }
+
+.product-detail .product-slide:hover .product-img-back,
 .product-card:hover .product-frame .product-img-back {
     display: block;
 }
+
+.product-detail .product-slide:hover .product-img,
 .product-card:hover .product-frame .product-img {
     display: none;
 }
@@ -571,32 +584,122 @@ footer .footer-section .footer-section {
 
 
 
+.product-detail {
+    
+}
+.product-detail img {
+    width: 400px;
+}
+
+
+.product-detail .product-infomation {
+
+}
+
+.product-detail .product-infomation .pro-price >h3 {
+    color:rgb(143, 28, 28);
+    font-size: 24px;
+    
+}
+
+.product-detail .product-infomation .quantity-area {
+    margin-left: 0;
+}
+.product-detail .product-infomation .quantity-area .change-quantity-btn{
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: 22px
+}
+
+.product-detail .product-infomation .quantity-area #quantity {
+    height:40px;
+    width: 100px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #efefef
+}
+
+
+.product-detail .product-infomation .description-section {
+
+}
+
+.product-detail .product-infomation .description-section li {
+    color: rgb(119, 119, 119)
+}
 
 
 
 
 
+/* POPUP-SECTION */
+
+#modal-section {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 123;
+    background-color: rgb(60 60 60 / 76%);
+    
+    /* display: none; */
+    /* opacity: 0; */
+    transition: all 0.3s ease forwards;
+}
+
+@keyframes showPopup {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#modal-section .modal-content {
+    position: absolute;
+    top: 200px;
+    left: calc(100% - 50% - 240px);
+    min-width: 480px;
+    height: 200px;
+    background-color: white
+}
+
+#modal-section .modal-content .modal-bar {
+    background-color: rgb(143, 28, 28);
+    height: 40px;
+    text-align: center;
+}
 
 
+#modal-section .modal-content .modal-bar .modal-title {
+    display: inline-block;
+    line-height: 40px;
+    color: white;
+    
+}
 
+#modal-section .modal-content .modal-bar .hidden-modal-btn{
+    float:right;
+    
+}
 
+#modal-section .modal-content .modal-bar i  {
+    padding: 12px;
+    color: white
+}
 
+#modal-section .modal-content .modal-action,
+#modal-section .modal-content .modal-text {
+    text-align: center
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#modal-section .modal-content .modal-action button {
+    width: 60px;
+}
 
 
 

@@ -16,7 +16,7 @@
 // 5 - S M L size
 
 
-var productsData = {
+const productsData = {
     topProducts: {
         tshirt: [
             {

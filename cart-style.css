@@ -76,14 +76,7 @@
     font-size: 18px
 }
 
-.sidebox-order .discount-section {
-    width: 100%;
-}
 
-.sidebox-order .discount-section > input {
-    width: 75%;
-    padding: 8px 12px;
-}
 
 
 
@@ -162,46 +155,6 @@
 
 
 
-
-.block {
-    display: block;
-}
-.field {
-    padding: 4px
-}
-
-
-.payment-info-section {
-    padding-right: 40px;
-}
-.field-required {
-    margin: 12px 0;
-}
-.field-required input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px
-}
-
-
-.field-required .payment-method input {
-    
-}
-
-.payment-info-section .payment-action a {
-    line-height: 48px;
-    color: rgb(143, 28, 28)
-}
-.payment-info-section .payment-action .billing-confirm-btn {
-    float: right;
-}
-
-
-
-
-.sidebar {
-    
-}
 
 
 

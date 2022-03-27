@@ -33,6 +33,13 @@
 }
 
 
+.payment-info-section .billing_address-2 {
+    /* justify-content: space-between; */
+}
+.payment-info-section .billing_address-2 > select {
+    width: 200px;
+    height: 40px
+}
 
 
 .sidebar {

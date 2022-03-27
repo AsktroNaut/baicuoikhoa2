@@ -1,3 +1,5 @@
+// HÀM TĂNG GIẢM SỐ LƯỢNG SẢN PHẨM
+
 $('input.input-qty').each(function() {
     var $this = $(this),
       qty = $this.parent().find('.is-form'),
@@ -16,3 +18,47 @@ $('input.input-qty').each(function() {
       $this.attr('value', d).val(d)
     })
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
