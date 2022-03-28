@@ -147,7 +147,7 @@
         </div>
 
 
-        <div id="modal-section">
+        <div id="modal-section" class="non-display">
             <div class="modal-content">
                 <div class="modal-bar">
                     <div class="modal-title">
@@ -264,13 +264,14 @@
             closePopUpBtns[i].onclick = function(e) {
                 e.preventDefault();
                 modal.classList.add('non-display')
+                
             }
             
         }
 
         modal.addEventListener('click', (e) => {
             modal.classList.add('non-display')
-            // console.log(e);
+            
         })
         modalContent.addEventListener('click', (e) => {
             e.stopImmediatePropagation()
