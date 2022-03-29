@@ -1,4 +1,4 @@
-// black - 1
+  // black - 1
 // white - 2
 // red - 3
 // green - 4
@@ -1018,3 +1018,185 @@ const productsData = {
         ]
     }
 }
+
+
+
+
+// Tất cả sản phẩm
+
+
+let tShirtList = [];
+productsData.topProducts.tshirt.forEach(i=>{
+    let temporaryId = i.id.toString().slice(0,4);
+    if(!tShirtList.find(i=>i.id==temporaryId)){
+        
+        let tempProduct = JSON.parse(JSON.stringify(i));
+        
+        tempProduct.id = temporaryId;
+        tShirtList.push(tempProduct);
+    }
+})
+console.log(tShirtList);
+
+let sweaterList = [];
+productsData.topProducts.sweater.forEach(i=>{
+    let temporaryId = i.id.toString().slice(0,4);
+    if(!sweaterList.find(i=>i.id==temporaryId)){
+        
+        let tempProduct = JSON.parse(JSON.stringify(i));
+        
+        tempProduct.id = temporaryId;
+        sweaterList.push(tempProduct);
+    }
+})
+console.log(sweaterList);
+
+let hoodieList = [];
+productsData.topProducts.hoodie.forEach(i=>{
+    let temporaryId = i.id.toString().slice(0,4);
+    if(!hoodieList.find(i=>i.id==temporaryId)){
+        
+        let tempProduct = JSON.parse(JSON.stringify(i));
+        
+        tempProduct.id = temporaryId;
+        hoodieList.push(tempProduct);
+    }
+})
+console.log(hoodieList);
+
+let shortList = [];
+productsData.bottomProducts.short.forEach(i=>{
+    let temporaryId = i.id.toString().slice(0,4);
+    if(!shortList.find(i=>i.id==temporaryId)){
+        
+        let tempProduct = JSON.parse(JSON.stringify(i));
+        
+        tempProduct.id = temporaryId;
+        shortList.push(tempProduct);
+    }
+})
+console.log(shortList);
+
+let pantsList = [];
+productsData.bottomProducts.pants.forEach(i=>{
+    let temporaryId = i.id.toString().slice(0,4);
+    if(!pantsList.find(i=>i.id==temporaryId)){
+        
+        let tempProduct = JSON.parse(JSON.stringify(i));
+        
+        tempProduct.id = temporaryId;
+        pantsList.push(tempProduct);
+    }
+})
+console.log(pantsList);
+
+let bagList = [];
+productsData.accessoryProducts.bag.forEach(i=>{
+    let temporaryId = i.id.toString().slice(0,4);
+    if(!bagList.find(i=>i.id==temporaryId)){
+        
+        let tempProduct = JSON.parse(JSON.stringify(i));
+        
+        tempProduct.id = temporaryId;
+        bagList.push(tempProduct);
+    }
+})
+console.log(bagList);
+
+
+
+const allProducts = [];
+tShirtList.forEach(i=>{
+    allProducts.push(i)
+})
+sweaterList.forEach(i=>{
+    allProducts.push(i)
+})
+hoodieList.forEach(i=>{
+    allProducts.push(i)
+})
+shortList.forEach(i=>{
+    allProducts.push(i)
+})
+pantsList.forEach(i=>{
+    allProducts.push(i)
+})
+bagList.forEach(i=>{
+    allProducts.push(i)
+})
+console.log(allProducts);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
