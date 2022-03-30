@@ -22,10 +22,14 @@ window.addEventListener('scroll', function() {
 
 // storage
 
-// render sản phẩm của storage
-
-
-
+// CHUYỂN TRANG VÀ TỰ ĐỘNG LOAD SẢN PHẨM TOP, BOTTOM, ACC
+// var searchingTopProductFromHeader = document.querySelector("[data-name='MAIN-TOP']")
+// console.log(searchingTopProductFromHeader);
+// searchingTopProductFromHeader.addEventListener("click", (event) => {
+//     // event.preventDefault()
+//     window.location = "storage.html"
+//     renderTopProducts()
+// })
 
 
 

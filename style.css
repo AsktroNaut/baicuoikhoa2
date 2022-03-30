@@ -369,17 +369,16 @@ main {
 }
 
 .product-card .product-action {
-    position: absolute;
+    /* position: absolute;
     bottom: -4px;
-    /* padding: 8px; */
-    left: 25px;
-    /* width: 86%; */
-    /* color: white; */
     
+    left: 25px;
+    
+     */
 }
 
 .product-card .product-action > button {
-    width: 44%;
+    width: 100%;
     padding: 4px 20px;
     margin-right: 4px;
     background-color: rgb(143, 28, 28);

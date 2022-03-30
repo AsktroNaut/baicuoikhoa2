@@ -1,5 +1,5 @@
 
-let currentProducts = productsData.topProducts.tshirt
+
 
 
 // hàm render gốc
@@ -16,6 +16,9 @@ let currentProducts = productsData.topProducts.tshirt
 // })
 // console.log(newList);
 
+
+
+// hàm load best sellerProducts
 
 
 // hàm Load thêm sản phẩm vào mảng tạm thời
@@ -54,8 +57,7 @@ renderAllProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button><i class="fa-solid fa-cart-plus"></i></button>
-                    <button>BUY</button>
+                    <button class="buy-product-btn">BUY</button>
                 </div>
     
                 <div class="product-caption">
@@ -72,6 +74,42 @@ renderAllProducts = () => {
 }
 renderAllProducts()
 
+
+renderTopProducts = () => {
+    productsContainer.innerHTML = ''
+
+    typeOfProduct.innerHTML = `TOP`
+    for (let i = 0; i < topProducts.length; i++) {
+        let currentProductsContent = topProducts[i]
+        let childItem = document.createElement("div")
+        childItem.classList.add('product-card')
+        childItem.classList.add('col')
+        childItem.classList.add('l-2-4')
+     
+        childItem.innerHTML =`
+            <a title="${currentProductsContent.id}" href="product-detail.html">
+                <div class="product-frame">
+                    <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
+                    <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
+                </div>
+    
+                <div class="product-action">
+                    <button class="buy-product-btn">BUY</button>
+                </div>
+    
+                <div class="product-caption">
+                    <h3 class="product-name">${currentProductsContent.name}</h3>
+                    <p class="product-price">${currentProductsContent.price}đ</p>
+    
+                </div>
+    
+            </a>
+        `
+        productsContainer.appendChild(childItem)
+    }
+    productsDisplaySection.appendChild(productsContainer)
+}
+// renderTopProducts()
 
 renderTshirtProducts = () => {
     productsContainer.innerHTML = ''
@@ -92,8 +130,7 @@ renderTshirtProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button><i class="fa-solid fa-cart-plus"></i></button>
-                    <button>BUY</button>
+                    <button class="buy-product-btn">BUY</button>
                 </div>
     
                 <div class="product-caption">
@@ -130,8 +167,7 @@ renderSweaterProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button><i class="fa-solid fa-cart-plus"></i></button>
-                    <button>BUY</button>
+                    <button class="buy-product-btn">BUY</button>
                 </div>
     
                 <div class="product-caption">
@@ -168,8 +204,7 @@ renderHoodieProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button><i class="fa-solid fa-cart-plus"></i></button>
-                    <button>BUY</button>
+                    <button class="buy-product-btn">BUY</button>
                 </div>
     
                 <div class="product-caption">
@@ -185,6 +220,43 @@ renderHoodieProducts = () => {
     productsDisplaySection.appendChild(productsContainer)
 }
 // renderHoodieProducts()
+
+
+renderBottomProducts = () => {
+    productsContainer.innerHTML = ''
+
+    typeOfProduct.innerHTML = `BOTTOM`
+    for (let i = 0; i < bottomProducts.length; i++) {
+        let currentProductsContent = bottomProducts[i]
+        let childItem = document.createElement("div")
+        childItem.classList.add('product-card')
+        childItem.classList.add('col')
+        childItem.classList.add('l-2-4')
+     
+        childItem.innerHTML =`
+            <a title="${currentProductsContent.id}" href="product-detail.html">
+                <div class="product-frame">
+                    <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
+                    <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
+                </div>
+    
+                <div class="product-action">
+                    <button class="buy-product-btn">BUY</button>
+                </div>
+    
+                <div class="product-caption">
+                    <h3 class="product-name">${currentProductsContent.name}</h3>
+                    <p class="product-price">${currentProductsContent.price}đ</p>
+    
+                </div>
+    
+            </a>
+        `
+        productsContainer.appendChild(childItem)
+    }
+    productsDisplaySection.appendChild(productsContainer)
+}
+
 
 renderShortProducts = () => {
     productsContainer.innerHTML = ''
@@ -205,8 +277,7 @@ renderShortProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button><i class="fa-solid fa-cart-plus"></i></button>
-                    <button>BUY</button>
+                    <button class="buy-product-btn">BUY</button>
                 </div>
     
                 <div class="product-caption">
@@ -221,7 +292,7 @@ renderShortProducts = () => {
     }
     productsDisplaySection.appendChild(productsContainer)
 }
-// renderShortProducts()
+
 
 renderPantsProducts = () => {
     productsContainer.innerHTML = ''
@@ -242,8 +313,7 @@ renderPantsProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button><i class="fa-solid fa-cart-plus"></i></button>
-                    <button>BUY</button>
+                    <button class="buy-product-btn">BUY</button>
                 </div>
     
                 <div class="product-caption">
@@ -258,7 +328,7 @@ renderPantsProducts = () => {
     }
     productsDisplaySection.appendChild(productsContainer)
 }
-// renderPantsProducts()
+
 
 renderAccessoryProducts = () => {
     productsContainer.innerHTML = ''
@@ -279,8 +349,7 @@ renderAccessoryProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button><i class="fa-solid fa-cart-plus"></i></button>
-                    <button>BUY</button>
+                    <button class="buy-product-btn">BUY</button>
                 </div>
     
                 <div class="product-caption">
@@ -295,31 +364,80 @@ renderAccessoryProducts = () => {
     }
     productsDisplaySection.appendChild(productsContainer)
 }
-// renderAccessoryProducts()
 
 
 
+// load danh mục
+var topProductsLoading = document.querySelector("[data-name='TOP']")
+var tshirtProductsLoading = document.querySelector("[data-name='TShirt']")
+
+var sweaterProductsLoading = document.querySelector("[data-name='Sweater']")
+var hoodieProductsLoading = document.querySelector("[data-name='Hoodie']")
+
+var bottomProductsLoading = document.querySelector("[data-name='BOTTOM']")
+var shortProductsLoading = document.querySelector("[data-name='Short']")
+var paintsProductsLoading = document.querySelector("[data-name='Paints']")
+
+var accessoryProductsLoading = document.querySelector("[data-name='ACCESSORIES']")
+var bagProductsLoading = document.querySelector("[data-name='Bag']")
+
+topProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderTopProducts()
+})
+tshirtProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderTshirtProducts()
+})
+
+sweaterProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderSweaterProducts()
+})
+
+hoodieProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderHoodieProducts()
+})
 
 
+bottomProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderBottomProducts()
+})
+shortProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderShortProducts()
+})
+paintsProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderPantsProducts()
+})
 
 
+accessoryProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderAccessoryProducts()
+})
+bagProductsLoading.addEventListener("click", (event) => {
+    event.preventDefault()
+    renderAccessoryProducts()
+})
 
 
+// hàm render chi tiết sản phẩm
 
+let buyProductBtns = document.querySelectorAll('.buy-product-btn')
+console.log(buyProductBtns);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+buyProductBtns.forEach(buyProductBtn => {
+    buyProductBtn.addEventListener("click", (event) => {
+        event.preventDefault()
+        window.location = "product-detail.html"
+        
+    })
+})
+    
 
 
 

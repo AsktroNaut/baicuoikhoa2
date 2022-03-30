@@ -37,7 +37,7 @@ const productsData = {
                 size: 'M',
                 color: 'Black',
                 price: 180000,
-                quantity: 50,
+                quantity: 28,
             },
             {
                 id: 11113,
@@ -47,7 +47,7 @@ const productsData = {
                 size: 'L',
                 color: 'Black',
                 price: 180000,
-                quantity: 50,
+                quantity: 64,
             },
 
             
@@ -1036,7 +1036,7 @@ productsData.topProducts.tshirt.forEach(i=>{
         tShirtList.push(tempProduct);
     }
 })
-console.log(tShirtList);
+
 
 let sweaterList = [];
 productsData.topProducts.sweater.forEach(i=>{
@@ -1049,7 +1049,7 @@ productsData.topProducts.sweater.forEach(i=>{
         sweaterList.push(tempProduct);
     }
 })
-console.log(sweaterList);
+
 
 let hoodieList = [];
 productsData.topProducts.hoodie.forEach(i=>{
@@ -1062,7 +1062,7 @@ productsData.topProducts.hoodie.forEach(i=>{
         hoodieList.push(tempProduct);
     }
 })
-console.log(hoodieList);
+
 
 let shortList = [];
 productsData.bottomProducts.short.forEach(i=>{
@@ -1075,7 +1075,7 @@ productsData.bottomProducts.short.forEach(i=>{
         shortList.push(tempProduct);
     }
 })
-console.log(shortList);
+
 
 let pantsList = [];
 productsData.bottomProducts.pants.forEach(i=>{
@@ -1101,7 +1101,9 @@ productsData.accessoryProducts.bag.forEach(i=>{
         bagList.push(tempProduct);
     }
 })
-console.log(bagList);
+
+
+
 
 
 
@@ -1124,15 +1126,31 @@ pantsList.forEach(i=>{
 bagList.forEach(i=>{
     allProducts.push(i)
 })
+
+
+const topProducts = [];
+tShirtList.forEach(i=>{
+    topProducts.push(i)
+})
+sweaterList.forEach(i=>{
+    topProducts.push(i)
+})
+hoodieList.forEach(i=>{
+    topProducts.push(i)
+})
+
+
+const bottomProducts = [];
+shortList.forEach(i=>{
+    bottomProducts.push(i)
+})
+pantsList.forEach(i=>{
+    bottomProducts.push(i)
+})
+
+
+
 console.log(allProducts);
-
-
-
-
-
-
-
-
 
 
 
