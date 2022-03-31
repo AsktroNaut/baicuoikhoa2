@@ -50,7 +50,7 @@ renderAllProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
@@ -87,7 +87,7 @@ renderTopProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
@@ -123,7 +123,7 @@ renderTshirtProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
@@ -160,7 +160,7 @@ renderSweaterProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
@@ -197,7 +197,7 @@ renderHoodieProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
@@ -234,7 +234,7 @@ renderBottomProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
@@ -270,7 +270,7 @@ renderShortProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
@@ -306,7 +306,7 @@ renderPantsProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
@@ -342,7 +342,7 @@ renderAccessoryProducts = () => {
         childItem.classList.add('l-2-4')
      
         childItem.innerHTML =`
-            <a title="${currentProductsContent.id}" href="product-detail.html">
+            <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">

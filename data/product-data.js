@@ -1088,7 +1088,7 @@ productsData.bottomProducts.pants.forEach(i=>{
         pantsList.push(tempProduct);
     }
 })
-console.log(pantsList);
+
 
 let bagList = [];
 productsData.accessoryProducts.bag.forEach(i=>{
@@ -1150,7 +1150,7 @@ pantsList.forEach(i=>{
 
 
 
-console.log(allProducts);
+
 
 
 

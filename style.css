@@ -342,7 +342,7 @@ main {
 }
 
 .product-card .product-frame {
-    
+    height: 161px !important
 
 }
 .product-card .product-frame .product-img-back,
@@ -354,8 +354,6 @@ main {
 .product-detail .product-slide .product-img-back,
 .product-card .product-frame .product-img-back {
     display: none;
-    
-
 }
 
 .product-detail .product-slide:hover .product-img-back,
