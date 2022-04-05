@@ -16,6 +16,12 @@
 // 5 - S M L size
 
 
+// hàm chuyển sang định dạng tiền tệ 
+const formatter = new Intl.NumberFormat('vi-VN', { 
+    style: 'currency', 
+    currency: 'VND' 
+})
+// formatter.format(number)
 const productsData = {
     topProducts: {
         tshirt: [
@@ -1148,15 +1154,20 @@ pantsList.forEach(i=>{
     bottomProducts.push(i)
 })
 
+console.log(allProducts);
 
 
+// tất cả sản phẩm đầy đủ
+let allProductsItem = [];
+allProductsItem = allProductsItem.concat(productsData.topProducts.tshirt)
+allProductsItem = allProductsItem.concat(productsData.topProducts.sweater)
+allProductsItem = allProductsItem.concat(productsData.topProducts.hoodie)
+allProductsItem = allProductsItem.concat(productsData.bottomProducts.short)
+allProductsItem = allProductsItem.concat(productsData.bottomProducts.pants)
+allProductsItem = allProductsItem.concat(productsData.accessoryProducts.bag)
 
 
-
-
-
-
-
+console.log(productsData.topProducts.tshirt);
 
 
 

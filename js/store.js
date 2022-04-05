@@ -57,7 +57,7 @@ renderAllProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -94,7 +94,7 @@ renderTopProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -130,7 +130,7 @@ renderTshirtProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -167,7 +167,7 @@ renderSweaterProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -204,7 +204,7 @@ renderHoodieProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -241,7 +241,7 @@ renderBottomProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -277,7 +277,7 @@ renderShortProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -313,7 +313,7 @@ renderPantsProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -349,7 +349,7 @@ renderAccessoryProducts = () => {
                 </div>
     
                 <div class="product-action">
-                    <button class="buy-product-btn">BUY</button>
+                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -427,16 +427,16 @@ bagProductsLoading.addEventListener("click", (event) => {
 
 // hàm render chi tiết sản phẩm
 
-let buyProductBtns = document.querySelectorAll('.buy-product-btn')
-console.log(buyProductBtns);
+// let buyProductBtns = document.querySelectorAll('.buy-product-btn')
+// console.log(buyProductBtns);
 
-buyProductBtns.forEach(buyProductBtn => {
-    buyProductBtn.addEventListener("click", (event) => {
-        event.preventDefault()
-        window.location = "product-detail.html"
+// buyProductBtns.forEach(buyProductBtn => {
+//     buyProductBtn.addEventListener("click", (event) => {
+//         event.preventDefault()
+//         window.location = "product-detail.html"
         
-    })
-})
+//     })
+// })
     
 
 

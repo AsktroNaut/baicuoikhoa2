@@ -81,6 +81,7 @@
                 <h1>/ Thông tin sản phẩm /</h1>
             </div>
 
+            <!-- html render -->
             <!-- <div class="row">
                 <div class="product-slide col l-5">
                     <img class="product-img" src="/product-img/1.jpg" alt="">
@@ -96,7 +97,7 @@
                     <div class="pro-price">
                         <h3>180000đ</h3>
                     </div>
-                    <form id="add-item-form" action="">
+                    <form id="add-item-form" name="variant-form" action="#">
                         <div class="variant-swatch">
                             <h4>Chọn size</h4>
                             <div class="select-swatch">
@@ -223,7 +224,7 @@
 
 
 
-
+    <script src="/lodash/lodash.js"></script>
     <script src="https://kit.fontawesome.com/bca5eda4f7.js" crossorigin="anonymous"></script>
     <script src="/js/app.js"></script>
     <script src="./data/product-data.js"></script>
@@ -249,37 +250,8 @@
         
 
 
-        // hàm ẩn/ hiện pop-up
-        let closePopUpBtns = document.querySelectorAll('.hidden-modal-btn')
-        let modal = document.getElementById('modal-section')
-        let addProductToCartBtn = document.getElementById('add-product-to-cart')
-        let modalContent = document.querySelector('.modal-content')
-        console.log(modalContent);
-        // hàm hiện popup
-        addProductToCartBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            modal.classList.remove('non-display')
-        })
-
-        // hàm ẩn popup
-        for (let i = 0; i < closePopUpBtns.length; i++) {
-            closePopUpBtns[i].onclick = function(e) {
-                e.preventDefault();
-                modal.classList.add('non-display')
-                
-            }
-            
-        }
-
-        modal.addEventListener('click', (e) => {
-            modal.classList.add('non-display')
-            
-        })
-        modalContent.addEventListener('click', (e) => {
-            e.stopImmediatePropagation()
-            
-        })
-
+        
+        
 
 
 
