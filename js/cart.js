@@ -5,11 +5,7 @@ let cartSection = document.querySelector('.cart-section')
 console.log(cartSection);
 
 let currentProductInCart = JSON.parse(localStorage.getItem('localCart'));
-
 console.log(currentProductInCart);
-
-
-
 
 if (currentProductInCart === null) {
     cartSection.style.display = 'none';
@@ -24,45 +20,9 @@ if (currentProductInCart === null) {
 
 
 
-// lấy thông tin sản phẩm trong giỏ hàng
 
-var infomationsOfProductsList = []
-console.log(allProductsItem);
-console.log(currentProductInCart);
-getFullInfomationsOfProductInCart = () => {
-    for (let i = 0; i < currentProductInCart.length; i++) {
-        for (let j = 0; j < allProductsItem.length; j++) {
-            if (currentProductInCart[i].id == allProductsItem[j].id) {
-                let product = {
-                id: allProductsItem[j].id,
-                name: allProductsItem[j].name,
-                price: allProductsItem[j].price,
-                number: currentProductInCart[i].number,
-                size: allProductsItem[j].size,
-                image: allProductsItem[j].frontImage,
-                color: allProductsItem[j].color,
-                }
-                infomationsOfProductsList.push(product)
-            }
-        }
-    }
-}
-getFullInfomationsOfProductInCart()
-console.log(infomationsOfProductsList);
 
-// lấy tổng giá tiền của từng item trong cart
-let billPriceArray = [] 
 
-infomationsOfProductsList.forEach(i => {
-    let result = i.price * i.number
-    return billPriceArray.push(result)
-})
-console.log(billPriceArray);
-// tỉnh tổng giá trị đơn hàng
-let BillPrice = billPriceArray.reduce((total, currentItem) => {
-    return total + currentItem
-})                                  
-BillPrice = formatter.format(BillPrice)
 
 
 
@@ -89,45 +49,94 @@ renderProductsInCartToHTML = () => {
         let tableCart = document.createElement('div');
         tableCart.className = 'table-cart'
         
+        // lấy lại thông tin chi tiết sản phẩm 
+        currentProductInCart = JSON.parse(localStorage.getItem('localCart'));
+        
+
+        // đẩy vào list 
+        let infomationsOfProductsList = []
+        getFullInfomationsOfProductInCart = () => {
+            for (let i = 0; i < currentProductInCart.length; i++) {
+                for (let j = 0; j < allProductsItem.length; j++) {
+                    if (currentProductInCart[i].id == allProductsItem[j].id) {
+                        let product = {
+                        id: allProductsItem[j].id,
+                        name: allProductsItem[j].name,
+                        price: allProductsItem[j].price,
+                        number: currentProductInCart[i].number,
+                        size: allProductsItem[j].size,
+                        image: allProductsItem[j].frontImage,
+                        color: allProductsItem[j].color,
+                        }
+                        infomationsOfProductsList.push(product)
+                    }
+                }
+            }
+        }
+        getFullInfomationsOfProductInCart()
+        console.log(infomationsOfProductsList);
+
+        // lấy tổng giá tiền của từng item trong cart
+        let billPriceArray = [] 
+        infomationsOfProductsList.forEach(i => {
+            let result = i.price * i.number
+            return billPriceArray.push(result)
+        })
+        console.log(billPriceArray);
+        // tỉnh tổng giá trị đơn hàng
+        let BillPrice = billPriceArray.reduce((total, currentItem) => {
+            return total + currentItem
+        })                                  
+        BillPrice = formatter.format(BillPrice)
+        // end hàm 
+
+
         for (let i = 0; i < infomationsOfProductsList.length; i++) {
-            let cartChild = document.createElement('div')
-         // tạo card con chứa line sản phẩm
-        console.log(cartChild);
-            let itemPrice = formatter.format(infomationsOfProductsList[i].price) // chuyển về giá trị tiền tệ
-            
-            let itemTotalPrice =  (infomationsOfProductsList[i].price * infomationsOfProductsList[i].number)
-            itemTotalPrice = formatter.format(itemTotalPrice)
-            
-            cartChild.innerHTML = `
-            <div class="line-item row">
-                <div class="item-image col">
-                    <img src="${infomationsOfProductsList[i].image}" alt="">
-                </div>
-                <div class="item-info col">
-                    <h3>
-                        <a href="">${infomationsOfProductsList[i].name}</a>
-                    </h3>
-                    <p class="price">${itemPrice}</p>
-                    <p class="variant">Size: ${infomationsOfProductsList[i].size}</p>
-                    <div class="item-quantity">
-                        <div class="buttons_added">
-                            <input class="minus is-form" type="button" value="-">
-                            <input aria-label="quantity" class="input-qty" max="50" min="1" name="" type="number" value="${infomationsOfProductsList[i].number}">
-                            <input class="plus is-form" type="button" value="+">
+            // let newinfomationsOfProductsList = _.find
+            let item = _.find(allProductsItem, { 'id': infomationsOfProductsList[i].id});
+            item.number = infomationsOfProductsList[i].number
+            console.log(item);
+            if (typeof(item) == 'object') {
+                let cartChild = document.createElement('div')
+                // tạo card con chứa line sản phẩm
+                // console.log(cartChild);
+                let itemPrice = formatter.format(infomationsOfProductsList[i].price) // chuyển về giá trị tiền tệ
+                
+                let itemTotalPrice =  (infomationsOfProductsList[i].price * infomationsOfProductsList[i].number)
+                itemTotalPrice = formatter.format(itemTotalPrice)
+                console.log();
+                cartChild.innerHTML = `
+                <div class="line-item row">
+                    <div class="item-image col">
+                        <img src="${infomationsOfProductsList[i].image}" alt="">
+                    </div>
+                    <div class="item-info col">
+                        <h3>
+                            <a href="product-detail.html?id=${infomationsOfProductsList[i].id}">${infomationsOfProductsList[i].name}</a>
+                        </h3>
+                        <p class="price">${itemPrice}</p>
+                        <p class="variant">Size: ${infomationsOfProductsList[i].size}</p>
+                        <div class="item-quantity">
+                            <div class="buttons_added">
+                                <input class="minus is-form" type="button" value="-">
+                                <input aria-label="quantity" class="input-qty" max="50" min="1" name="" type="number" value="${infomationsOfProductsList[i].number}">
+                                <input class="plus is-form" type="button" value="+">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="margin-left: auto">
+                        <div class="item-remove">
+                            <button class="remove-item-btn" data-productID="${infomationsOfProductsList[i].id}" data-productSize="${infomationsOfProductsList[i].size}"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <div class="total-item-price">
+                            <h2>${itemTotalPrice}</h2>
                         </div>
                     </div>
                 </div>
-                <div class="col" style="margin-left: auto">
-                    <div class="item-remove">
-                        <button class="remove-item-btn" data-productID="${infomationsOfProductsList[i].id}" data-productSize="${infomationsOfProductsList[i].size}"><i class="fa-solid fa-xmark"></i></button>
-                    </div>
-                    <div class="total-item-price">
-                        <h2>${itemTotalPrice}</h2>
-                    </div>
-                </div>
-            </div>
-            `
-            tableCart.append(cartChild)
+                `
+                tableCart.append(cartChild)
+            }
+            
         }
         cartForm.append(tableCart)
         productItemLine.append(cartForm)
@@ -156,46 +165,48 @@ renderProductsInCartToHTML = () => {
     }
 }
 renderProductsInCartToHTML()
+console.log( 456);
+
 
 // hàm remove sản phẩm trong cart
 let removeItemBtns = document.getElementsByClassName('remove-item-btn')
 console.log(removeItemBtns);
-for (let i = 0; i < removeItemBtns.length; i++) {
-    
-    removeItemBtns[i].addEventListener("click", (e) => {
-        console.log(removeItemBtns[i].size); 
-        e.preventDefault()
-        let itemRemoveID = removeItemBtns[i].getAttribute("data-productID");
-        
-        
 
-        let removeItem = _.find(currentProductInCart, { id: itemRemoveID },);
-        console.log(removeItem);
-        let localCurrentProduct = JSON.parse(localStorage.getItem('localCart'))
-        console.log(localCurrentProduct);
-        let newCart = _.reject(localCurrentProduct, function(o) { return o.id == itemRemoveID; });
-        console.log(newCart);
-        localStorage.setItem("localCart", JSON.stringify(newCart));
-        cartSection.innerHTML= ``
-        renderProductsInCartToHTML()
-        console.log(123);
-    })
+setRemoveBtnsAction = () => {
+    for (let i = 0; i < removeItemBtns.length; i++) {
     
-    
+        removeItemBtns[i].addEventListener("click", (e) => {
+            console.log(removeItemBtns[i]);
+            e.preventDefault()
+            let itemRemoveID = removeItemBtns[i].getAttribute("data-productID");
+            let removeItem = _.find(currentProductInCart, { id: itemRemoveID },);
+            console.log(removeItem);
+            let localCurrentProduct = JSON.parse(localStorage.getItem('localCart'))
+            console.log(localCurrentProduct);
+            let newCart = _.reject(localCurrentProduct, function(o) { return o.id == itemRemoveID; });
+            console.log('newCart: ', newCart); 
+            localStorage.setItem("localCart", JSON.stringify(newCart));
+            cartSection.innerHTML= ``
+            renderProductsInCartToHTML()
+            console.log(123);
+            setRemoveBtnsAction()
+        })
+    }
 }
+setRemoveBtnsAction()
 
 
 // accumulation
 
     
 const payBtn = document.querySelector('.order-pay-btn')
-console.log(payBtn);
+
 
 payBtn.onclick = () => {
     window.location = 'payment.html'
 }
 
-
+console.log(infomationsOfProductsList);
 
 
 
