@@ -27,23 +27,28 @@
                 <form class="field-required" action="">
                     <div class="field">
                         <label class="row" for="billing_full_name">Họ và tên</label>
-                        <input class="row" type="text" id="billing_full_name">
+                        <input class="row" type="text" id="billing_full_name" placeholder="Nhập họ và tên!" required="">
                     </div>
                     <div class="field row">
                         <div class="col l-8">
                             <label class="row" for="billing_email">Email</label>
-                            <input class="row" type="email" id="billing_email">
+                            <input class="row" type="email" id="billing_email" placeholder="Nhập email để nhận thông báo theo dõi đơn hàng nhé!">
                         </div>
 
                         <div class="col l-4">
                             <label class="row" for="billing_phone_number">Số điện thoại</label>
-                            <input class="row" type="tel" id="billing_phone_number">
+                            <input class="row" type="tel" id="billing_phone_number" placeholder="Nhập số điện thoại nhận hàng!" required="">
                         </div>
                         
                     </div>
                     <div class="field">
                         <label class="row" for="billing_address-1">Địa chỉ</label>
-                        <input class="row" type="text" id="billing_address-1">
+                        <input class="row" type="text" id="billing_address-1" placeholder="Số nhà, đường, (mô tả) ..." required="">
+                    </div>
+
+                    <div class="field">
+                        <label class="row" for="billing_message">Lời nhắn</label>
+                        <textarea class="row" id="billing_message" required="" rows="4" cols="90" placeholder="Để lại lời nhắn cho chúng tôi..."></textarea>
                     </div>
 
                     <div class="billing_address-2 section">
@@ -61,7 +66,7 @@
                     <div class="payment-method field">
                         <h3>Phương thức thanh toán</h3>
                         <div class="row">
-                            <input class="col l-2" type="radio" id="payment_cod" name="method" value="Bike">
+                            <input class="col l-2" type="radio" id="payment_cod" name="method" value="Bike" checked="checked">
                             <label class="col l-10" for="payment_cod"><h4>Thanh toán khi nhận hàng (COD)</h4></label><br>
                         </div>
                         <div class="row">
@@ -71,20 +76,20 @@
                         
                     </div>
                     
+                    <div class="payment-action">
+                        <a href="cart.html"><i class="fa-solid fa-angle-left"></i> Giỏ Hàng</a>
+                        <button type="submit" class="billing-confirm-btn hero-btn-full">Hoàn tất đơn hàng</button>
+    
+                    </div>
                 </form>
 
-                <div class="payment-action">
-                    <a href="cart.html"><i class="fa-solid fa-angle-left"></i> Giỏ Hàng</a>
-                    <button type="submit" class="billing-confirm-btn hero-btn-full">Hoàn tất đơn hàng</button>
-
-                </div>
             </div>
 
 
 
             <div class="sidebar col l-5">
                 <div class="billing-list underline">
-                    <div class="billing-item row">
+                    <!-- <div class="billing-item row">
                         <img src="./product-image/top/tshirt/11111f.jpg" alt="">
                         <div class="col l-7">
                             <h4>Mini Signature Hoodie / Seafoam Color </h4>
@@ -102,37 +107,19 @@
                             <p>Số lượng: 1</p>
                         </div>
                         <h3>180000đ</h3>
-                    </div>
+                    </div> -->
                 </div>
 
-                
-                <div class="discount-section underline">
+                <form class="discount-section underline">
                     <h3>Nhập mã khuyến mãi</h3>
                     <input class="col" type="text" placeholder="Nhập mã giảm giá">
                     <button class="btn-apply s-hero-btn col">ÁP DỤNG</button>
-                </div>
+                </form>
 
-                <div class="billing-amount row underline">
-                    <div class="billing-cost row">
-                        <h3>Tạm tính:</h3>
-                        <span class="billing-temporary-amount">360000đ</span>
-                    </div>
-                    <div class="billing-cost row">
-                        <h3>Giảm giá:</h3>
-                        <span class="billing-discount-amount">50000đ</span>
-                    </div>
-                    <div class="billing-cost row">
-                        <h3>Phí vận chuyển:</h3>
-                        <span class="billing-discount-amount">30000đ</span>
-                    </div>
-                </div>
-
-                <div class="billing-total-amount section">
-                    
-                    <h1>Tổng cộng:</h1>
-                    <span class="billing-final-amount">30000đ</span>
+                <div class="billing-amount-section">
                     
                 </div>
+                
             </div>
         </div>
 
@@ -143,11 +130,12 @@
     <script src="/lodash/lodash.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
-    <script src="/js/app.js"></script>
+    <!-- <script src="/js/app.js"></script> -->
 
     <script src="./data/product-data.js"></script>
     
     <script src="./js/cart.js"></script>
+    <script src="./data/discount-code.js"></script>
     <script src="./js/payment.js"></script>
 
 

@@ -13,6 +13,8 @@
 .field-required {
     margin: 12px 0;
 }
+
+.field-required textarea,
 .field-required input {
     width: 100%;
     padding: 8px;
@@ -47,16 +49,20 @@
     border-left: 1px solid #ccc;
 }
 
+
+
 .sidebar .billing-item {
-    padding: 12px 0
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc;
+
 }
 
 .sidebar .billing-item >img {
-    width:80px;
+    height: 60px;
 }
 
 .sidebar .billing-item h3 {
-    line-height: 84px;
+    line-height: 60px;
     padding: auto;
 }
 
