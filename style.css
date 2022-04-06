@@ -233,7 +233,8 @@ max-height: 1200px;
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-    color: rgb(148, 148, 148)
+    color: rgb(233, 233, 233);
+    padding: 0 50px;
 }
 
 
