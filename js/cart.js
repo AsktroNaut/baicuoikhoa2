@@ -18,14 +18,6 @@ if (currentProductInCart === null) {
 
 
 
-
-
-
-
-
-
-
-
 // hàm render HTML cart    
 renderProductsInCartToHTML = () => {
     
