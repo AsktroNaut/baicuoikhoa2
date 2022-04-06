@@ -152,7 +152,7 @@
     
 
     <script src="/jquery/jquery-3.6.0.min.js"></script>
-    <script>//<![CDATA[
+    <script>
         $('input.input-qty').each(function() {
           var $this = $(this),
             qty = $this.parent().find('.is-form'),
@@ -171,44 +171,9 @@
             $this.attr('value', d).val(d)
           })
         })
-        //]]></script>
+    </script>
 </body>
 </html>
 
 
 
-<!-- <form class="payment-form" action="">
-                        <div class="table-cart">
-                            
-                            <div class="line-item row">
-                                <div class="item-image col">
-                                    <img src="product-img/1.jpg" alt="">
-                                </div>
-                                <div class="item-info col">
-                                    <h3>
-                                        <a href="">Bazic Tee v2.0 / Cream Color</a>
-                                    </h3>
-                                    <p class="price">180.000d</p>
-                                    <p class="variant">S / Cream</p>
-                                    <div class="item-quantity">
-                                        <div class="buttons_added">
-                                            <input class="minus is-form" type="button" value="-">
-                                            <input aria-label="quantity" class="input-qty" max="50" min="1" name="" type="number" value="1">
-                                            <input class="plus is-form" type="button" value="+">
-
-                                        </div>
-                                            
-                                    </div>
-                                </div>
-                                <div class="col" style="margin-left: auto">
-                                    <div class="item-remove">
-                                        <button><i class="fa-solid fa-xmark"></i></button>
-                                    </div>
-                                    <div class="total-item-price">
-                                        <h2>180.000đ</h2>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div> 
-                    </form> -->
