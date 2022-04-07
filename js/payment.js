@@ -1,5 +1,7 @@
 
 
+
+  
 const billingList = document.querySelector('.billing-list')
 console.log(billingList);
 
@@ -146,10 +148,21 @@ renderTotalBillPrice = () => {
 renderTotalBillPrice()
 
 
+let confirmBillingBtn = document.querySelector('.billing-confirm-btn')
+console.log(confirmBillingBtn);
 
 
 
-
+confirmBillingBtn.onclick = (e) => {
+    e.stopImmediatePropagation()
+    alert('ok không?')
+    Swal.fire(
+        'ĐÃ ĐẶT HÀNG THÀNH CÔNG!',
+        'Cảm ơn bạn đã tin tưởng và sử dụng sản phẩm của TAMMY!',
+        'success'
+    )
+    window.location = 'index.html'
+}
 
 
 

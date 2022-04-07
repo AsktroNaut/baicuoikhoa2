@@ -35,8 +35,10 @@
 .table-cart .line-item .item-remove {
     float: right;
 }
-
-
+.cart-overview > p,
+.cart-overview > a {
+    display: none
+}
 .table-cart .line-item .item-remove > button {
     background-color: transparent;
 

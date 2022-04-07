@@ -7,13 +7,23 @@ console.log(cartSection);
 let currentProductInCart = JSON.parse(localStorage.getItem('localCart'));
 console.log(currentProductInCart);
 
-if (currentProductInCart === null) {
-    cartSection.style.display = 'none';
-    cartOverview.style.display = 'block'
-    let backToStoreBtn = document.querySelector('.cart-overview > a')
-    backToStoreBtn.style.display = 'block'
+let backToStoreBtn = document.querySelector('.cart-overview > a')
+let cartSubtitle = document.querySelector('.cart-overview > p')
 
-} 
+if (currentProductInCart.length == 0) {
+    console.log(11111);
+    cartSection.style.display = 'none'
+
+    // cartOverview.style.display = 'block'
+    
+    console.log(backToStoreBtn);
+    backToStoreBtn.style.display = 'block'
+    cartSubtitle.style.display = 'block'
+
+} else if (currentProductInCart.length != 0) {
+    backToStoreBtn.style.display = 'none'
+    cartSubtitle.style.display = 'none'
+}
 
 
 
@@ -103,15 +113,13 @@ renderProductsInCartToHTML = () => {
                         <img src="${infomationsOfProductsList[i].image}" alt="">
                     </div>
                     <div class="item-info col">
-                        <h3>
-                            <a href="product-detail.html?id=${infomationsOfProductsList[i].id}">${infomationsOfProductsList[i].name}</a>
-                        </h3>
+                        <h3>${infomationsOfProductsList[i].name}</h3>
                         <p class="price">${itemPrice}</p>
                         <p class="variant">Size: ${infomationsOfProductsList[i].size}</p>
                         <div class="item-quantity">
                             <div class="buttons_added">
                                 <input class="minus is-form" type="button" value="-">
-                                <input aria-label="quantity" class="input-qty" max="50" min="1" name="" type="number" value="${infomationsOfProductsList[i].number}">
+                                <input aria-label="quantity" class="input-qty" max="50" min="1" name="${infomationsOfProductsList[i].id}" type="number" value="${infomationsOfProductsList[i].number}">
                                 <input class="plus is-form" type="button" value="+">
                             </div>
                         </div>
@@ -198,7 +206,7 @@ payBtn.onclick = () => {
     window.location = 'payment.html'
 }
 
-console.log(infomationsOfProductsList);
+
 
 
 

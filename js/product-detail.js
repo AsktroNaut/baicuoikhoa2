@@ -111,36 +111,41 @@ console.log(addToCartBtn);
 
 
 // hàm ẩn/ hiện pop-up
-let closePopUpBtns = document.querySelectorAll('.hidden-modal-btn')
-let modal = document.getElementById('modal-section')
+// let closePopUpBtns = document.querySelectorAll('.hidden-modal-btn')
+// let modal = document.getElementById('modal-section')
 let addProductToCartBtn = document.getElementById('add-product-to-cart')
-let modalContent = document.querySelector('.modal-content')
-console.log(modalContent);
+// let modalContent = document.querySelector('.modal-content')
+// console.log(modalContent);
 // hàm hiện popup
 addProductToCartBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    modal.classList.remove('non-display')
+    // modal.classList.remove('non-display')
+    Swal.fire(
+        'THÀNH CÔNG!',
+        'Đã thêm sản phẩm vào giỏ hàng!',
+        'success'
+      )
     
 })
 
 
 
 // hàm ẩn popup
-for (let i = 0; i < closePopUpBtns.length; i++) {
-    closePopUpBtns[i].onclick = function(e) {
-        e.preventDefault();
-        modal.classList.add('non-display')
-    }
-}
+// for (let i = 0; i < closePopUpBtns.length; i++) {
+//     closePopUpBtns[i].onclick = function(e) {
+//         e.preventDefault();
+//         modal.classList.add('non-display')
+//     }
+// }
 
-modal.addEventListener('click', (e) => {
-    modal.classList.add('non-display')
+// modal.addEventListener('click', (e) => {
+//     modal.classList.add('non-display')
     
-})
-modalContent.addEventListener('click', (e) => {
-    e.stopImmediatePropagation()
+// })
+// modalContent.addEventListener('click', (e) => {
+//     e.stopImmediatePropagation()
     
-})
+// })
 
 
 
@@ -191,7 +196,6 @@ addProductToCartFunction = () => {
 }
 
 console.log(JSON.parse(localStorage.getItem('localCart')));
-
 
 
 

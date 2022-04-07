@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOW</title>
 
+    
     <link rel="stylesheet" href="gridOG.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="payment-style.css">
-    
+    <!-- <link rel="stylesheet" href="/sweetAlert/sweetalert.css"> -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="/slideShow.css"> -->
+
+    
 </head>
 <body>
     
@@ -21,7 +23,9 @@
                 <div class="payment-header">
                     <h1>NOWSAIGON</h1>
                     <h3>Thông tin giao hàng</h3>
-                    <p>Bạn đã có tài khoản?<a style="color: rgb(143,28,28)" href="login.html"> Đăng nhập</a></p>
+                    <span>Bạn đã có tài khoản?<a style="color: rgb(143,28,28)" href="login.html"> Đăng nhập</a></span>
+                    <span><a style="color: rgb(143,28,28)" href="index.html">Về trang chủ</a></span>
+
                 </div>
 
                 <form class="field-required" action="">
@@ -48,7 +52,7 @@
 
                     <div class="field">
                         <label class="row" for="billing_message">Lời nhắn</label>
-                        <textarea class="row" id="billing_message" required="" rows="4" cols="90" placeholder="Để lại lời nhắn cho chúng tôi..."></textarea>
+                        <textarea class="row" id="billing_message" rows="4" cols="90" placeholder="Để lại lời nhắn cho chúng tôi..."></textarea>
                     </div>
 
                     <div class="billing_address-2 section">
@@ -127,10 +131,12 @@
     </main>
 
     
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="./sweetAlert/sweetalert2-master/sweetalert2-master/src/sweetalert2.js"></script> -->
     <script src="./lodash/lodash.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
-    <!-- <script src="./js/app.js"></script> -->
+    
 
     <script src="./data/product-data.js"></script>
     
@@ -138,7 +144,7 @@
     <script src="./data/discount-code.js"></script>
     <script src="./js/payment.js"></script>
 
-
+    
 
 
 

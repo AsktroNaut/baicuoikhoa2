@@ -56,10 +56,6 @@ renderAllProducts = () => {
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
                 </div>
     
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
-                </div>
-    
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
                     <p class="product-price">${currentProductsContent.price}đ</p>
@@ -93,10 +89,6 @@ renderTopProducts = () => {
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
                 </div>
     
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
-                </div>
-    
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
                     <p class="product-price">${currentProductsContent.price}đ</p>
@@ -127,10 +119,6 @@ renderTshirtProducts = () => {
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
-                </div>
-    
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -166,10 +154,6 @@ renderSweaterProducts = () => {
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
                 </div>
     
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
-                </div>
-    
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
                     <p class="product-price">${currentProductsContent.price}đ</p>
@@ -201,10 +185,6 @@ renderHoodieProducts = () => {
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
-                </div>
-    
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -240,10 +220,6 @@ renderBottomProducts = () => {
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
                 </div>
     
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
-                </div>
-    
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
                     <p class="product-price">${currentProductsContent.price}đ</p>
@@ -274,10 +250,6 @@ renderShortProducts = () => {
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
-                </div>
-    
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
@@ -312,10 +284,6 @@ renderPantsProducts = () => {
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
                 </div>
     
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
-                </div>
-    
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
                     <p class="product-price">${currentProductsContent.price}đ</p>
@@ -346,10 +314,6 @@ renderAccessoryProducts = () => {
                 <div class="product-frame">
                     <img src="${currentProductsContent.frontImage}" class="product-img" alt="">
                     <img src="${currentProductsContent.backImage}" class="product-img-back" alt="">
-                </div>
-    
-                <div class="product-action">
-                    <span data-idproduct="${currentProductsContent.id}" class="add-to-cart-btn"><i class="fa-solid fa-cart-plus"></i></span>
                 </div>
     
                 <div class="product-caption">
