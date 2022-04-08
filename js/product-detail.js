@@ -81,9 +81,9 @@ renderProductCardToHTML = () => {
                 <ul>
                     <li>- Gồm 3 size: S / M / L </li>
                     <li><b>- Thông số áo: S : Dài 69 Rộng 52.5 | M : Dài 73 Rộng 55 | L: Dài : 76.5 Rộng: 57.5</b></li>
-                    <li>- Chất liệu vải :100% Cotton '' Chất lượng vải đánh dấu sự ra đời của Nowsaigon''</li>
+                    <li>- Chất liệu vải :100% Cotton '' Chất lượng vải đánh dấu sự ra đời của Tammy''</li>
                     <li>- Công nghệ in: In lụa cao cấp, bảo quản tốt khi giặt máy , không bong tróc phai màu</li>
-                    <li>- Nowsaigon xuất hiện mang đến làn gió mới, xuất hiện từ đầu năm 2022 đầy biến động nhưng những gì Nowsaigon thực hiện đem tới một chất lượng và giá thành tốt nhất đến cho các bạn nha.</li>
+                    <li>- Tammy xuất hiện mang đến làn gió mới, xuất hiện từ đầu năm 2022 đầy biến động nhưng những gì Tammy thực hiện đem tới một chất lượng và giá thành tốt nhất đến cho các bạn nha.</li>
                 </ul>
             </div>
         
