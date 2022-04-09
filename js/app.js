@@ -1,6 +1,10 @@
 
-// hàm trượt thanh header bar
+// checkLogin
+let isLogin
 
+
+
+// hàm trượt thanh header bar
 const headerBar = document.getElementById('header')
 var lastScrollTop = 0
 

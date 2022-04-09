@@ -97,34 +97,24 @@ renderProductCardToHTML()
 
 
 // tạo cart và đẩy vào localStorage
-
 let addToCartBtn = document.querySelector('#add-product-to-cart')
-
 console.log(addToCartBtn);
 
-// let sizeChosen = document.querySelector('input[name="rate"]:checked').value;
-// addToCartBtn.onclick = (e) => {
-//     let product = {}
-//     product.id = 
-// }
 
 
 
-// hàm ẩn/ hiện pop-up
-// let closePopUpBtns = document.querySelectorAll('.hidden-modal-btn')
-// let modal = document.getElementById('modal-section')
+
+
 let addProductToCartBtn = document.getElementById('add-product-to-cart')
-// let modalContent = document.querySelector('.modal-content')
-// console.log(modalContent);
-// hàm hiện popup
+
 addProductToCartBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    // modal.classList.remove('non-display')
+    
     Swal.fire(
         'THÀNH CÔNG!',
         'Đã thêm sản phẩm vào giỏ hàng!',
         'success'
-      )
+    )
     
 })
 
@@ -198,7 +188,14 @@ addProductToCartFunction = () => {
 console.log(JSON.parse(localStorage.getItem('localCart')));
 
 
+// hàm click mua sản phẩm
+const buyProductBtn = document.querySelector('#buy-product')
+buyProductBtn.onclick = (e) => {
+    e.preventDefault()
+    addProductToCartFunction()
+    window.location = 'payment.html'
 
+}
 
 
 

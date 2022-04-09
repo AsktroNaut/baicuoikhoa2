@@ -26,7 +26,10 @@ button {
     width: 100%;
 }
 
-
+.error-notification {
+    color: red;
+    display: none;
+}
 
 button:hover {
     cursor: pointer;
@@ -503,40 +506,45 @@ footer .footer-section .footer-section {
 
 
 /* LOGIN */
+.register-section,
 .login-section {
     /* align-items: center;
     text-align: center; */
 }
 
-
+.register-form,
 .login-form {
     text-align: center;
     width: 400px;
     margin: 0 auto;
 }
-
+.register-form input,
 .login-form input {
     width: 100%;
     padding: 18px;
     margin-bottom: 12px;
 }
-
+.register-form .register-action,
 .login-form .login-action {
     margin-top: 24px
 }
 
+.register-form .register-action>a,
+.register-form .register-action>a>i,
 .login-form .login-action>a,
 .login-form .login-action>a>i {
     color: rgb(143, 28, 28)
 }
+
+.register-form .register-action a:first-child,
 .login-form .login-action a:first-child {
     float: right;
 }
-
+.register-form .register-action>a:nth-child(2),
 .login-form .login-action>a:nth-child(2) {
     float: left;
 }
-
+.register-form .register-btn,
 .login-form .login-btn {
     width: 100%;
     margin: 12px 0;

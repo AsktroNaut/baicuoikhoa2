@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOW</title>
+    <title>REGISTER</title>
 
     <link rel="stylesheet" href="gridOG.css">
     <link rel="stylesheet" href="style.css">
@@ -29,9 +29,9 @@
 
                 
                 <ul class="nav">
-                    <li><a href="index.html" class="nav-item">HOME</a></li>
+                    <li><a href="index.html" class="nav-item">TRANG CHỦ</a></li>
                     <li style="position: relative;">
-                        <a href="" class="nav-item">SHOP<i class="bx bx-chevron-down"></i></a>
+                        <a href="" class="nav-item">CỬA HÀNG<i class="bx bx-chevron-down"></i></a>
                         <ul>                                
                             <li class="subnav"><a data-name="TOP" href="#">TOP</a></li>
                             <li class="subnav"><a data-name="BOTTOM" href="#">BOTTOM</a></li>
@@ -39,7 +39,7 @@
                             
                         </ul>
                     </li>
-                    <li style="border: none;"><a href="" class="nav-item">ABOUT</a></li>
+                    <li style="border: none;"><a href="" class="nav-item">VỀ CHÚNG TÔI</a></li>
 
                 </ul>
                 
@@ -77,39 +77,48 @@
     </header>
 
     <main>
-        <div class="login-section container section ">
+        <div class="register-section container section ">
             <div class="hero-content section">
                 <h1>/ ĐĂNG KÍ /</h1>
             </div>
-            <form class="login-form" action="">
+            <form class="register-form" action="">
                 <div class="">
-                    <input type="text" placeholder="username" required>
-                </div>
-                <div class="">
-                    <input type="password" placeholder="Mật khẩu" required>
-                </div>
-                <div class="">
-                    <input type="password" placeholder="Nhập lại mật khẩu" required>
+                    <input name="username" type="text" placeholder="username (*)" required>
                 </div>
 
                 <div class="">
-                    <input type="date" placeholder="Nhập email">
+                    <input name="userPassword" type="password" placeholder="Mật khẩu (*)" required>
                 </div>
                 <div class="">
-                    <input type="email" placeholder="Nhập email">
+                    <input name="userPasswordCheck" type="password" placeholder="Nhập lại mật khẩu (*)" required>
                 </div>
 
+                <div class="">
+                    <input name="dateOfBirth" type="date">
+                </div>
+                <div class="">
+                    <input name="userPhoneNumber" type="tel" placeholder="Nhập số điện thoại">
+                </div>
+                <div class="">
+                    <input name="userEmail" type="email" placeholder="Nhập email">
+                </div>
+
+                <span class="duplicate-error error-notification">Tên đăng nhập đã được sử dụng, vui lòng chọn tên đăng nhập khác!</span>
+                <span class="username-error error-notification">Tên đăng nhập phải có ít nhất 6 kí tự!</span>
+                <span class="password-error error-notification">Mật khẩu phải có ít nhất 8 kí tự, bao gồm chữ và số!</span>
+                <span class="checked-password-error error-notification">Mật khẩu và xác nhận mật khẩu không trùng nhau</span>
+                
                 <p style="color: rgb(133, 133, 133)">
                     This site is protected by reCAPTCHA and the Google <a style="color: rgb(143,28,28)" href="https://policies.google.com/privacy">Privacy Policy</a> and <a style="color: rgb(143,28,28)" href="https://policies.google.com/terms">Terms of Service</a> apply.
                 </p>
-                <div class="login-action">
+                <div class="register-action">
                     <a href="login.html">
                         <i class="fa-solid fa-angles-left"></i> Đăng nhập
                     </a>
                     
                     
-                    <button class="login-btn">
-                        REGISTER
+                    <button class="register-btn">
+                        ĐĂNG KÍ
                     </button>
     
                     
@@ -170,9 +179,12 @@
 
 
 
-
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./jquery/jquery-3.6.0.min.js"></script>
+    <script src="./lodash/lodash.js"></script>
     <script src="https://kit.fontawesome.com/bca5eda4f7.js" crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/register.js"></script>
+
 </body>
 </html>

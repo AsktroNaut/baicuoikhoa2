@@ -1,6 +1,7 @@
 
 
-console.log();
+
+
 let cartSection = document.querySelector('.cart-section')
 console.log(cartSection);
 
@@ -20,7 +21,7 @@ if (currentProductInCart.length == 0) {
     backToStoreBtn.style.display = 'block'
     cartSubtitle.style.display = 'block'
 
-} else if (currentProductInCart.length != 0) {
+} else if (currentProductInCart.length !== 0) {
     backToStoreBtn.style.display = 'none'
     cartSubtitle.style.display = 'none'
 }
@@ -119,7 +120,7 @@ renderProductsInCartToHTML = () => {
                         <div class="item-quantity">
                             <div class="buttons_added">
                                 <input class="minus is-form" type="button" value="-">
-                                <input aria-label="quantity" class="input-qty" max="50" min="1" name="${infomationsOfProductsList[i].id}" type="number" value="${infomationsOfProductsList[i].number}">
+                                <input aria-label="quantity" class="input-qty" max="50" min="1"  name="${infomationsOfProductsList[i].id}" type="number" value="${infomationsOfProductsList[i].number}" onchange="console.log('thay đổi giá trị')">
                                 <input class="plus is-form" type="button" value="+">
                             </div>
                         </div>
@@ -161,18 +162,63 @@ renderProductsInCartToHTML = () => {
             </div>
         `
         totalBillCalcSection.append(invoiceContent) //hàm đẩy nội dung vào tổng bill
-        console.log(234);
+        console.log('chạy hàm if trong render');
     }
+    
 }
 renderProductsInCartToHTML()
-console.log( 456);
 
+
+changeNumberOfProductsByJquery = () => {
+    $('input.input-qty').each(function() {
+        var $this = $(this),
+          qty = $this.parent().find('.is-form'),
+          min = Number($this.attr('min')),
+          max = Number($this.attr('max'))
+        if (min == 0) {
+          var d = 0
+        } else d = min
+        $(qty).on('click', function() {
+          if ($(this).hasClass('minus')) {
+            if (d > min) d += -1
+          } else if ($(this).hasClass('plus')) {
+            var x = Number($this.val()) + 1
+            if (x <= max) d += 1
+          }
+          $this.attr('value', d).val(d)
+        })
+    })
+}
+changeNumberOfProductsByJquery()
+
+
+// hàm thay đổi số lượng sản phẩm trong cart
+changeNumberOfProductsInCart = () => {
+    $('input.input-qty').change(function() {
+        console.log('ok nhé');
+    })
+
+}
+changeNumberOfProductsInCart()
+
+
+// hàm chuyển trang khi click thanh toán
+payBillFunc = () => {
+    let payBtn = document.querySelector('.order-pay-btn')
+    payBtn.onclick = () => {
+        window.location = 'payment.html'
+    }
+}    
+payBillFunc()
 
 // hàm remove sản phẩm trong cart
-let removeItemBtns = document.getElementsByClassName('remove-item-btn')
-console.log(removeItemBtns);
+
+
+
 
 setRemoveBtnsAction = () => {
+    let removeItemBtns = document.getElementsByClassName('remove-item-btn')
+    console.log(removeItemBtns);
     for (let i = 0; i < removeItemBtns.length; i++) {
     
         removeItemBtns[i].addEventListener("click", (e) => {
@@ -192,19 +238,14 @@ setRemoveBtnsAction = () => {
             setRemoveBtnsAction()
         })
     }
+    payBillFunc()
+    changeNumberOfProductsByJquery()
+    console.log('chạy hàm remove');
 }
 setRemoveBtnsAction()
 
 
 // accumulation
-
-    
-const payBtn = document.querySelector('.order-pay-btn')
-
-
-payBtn.onclick = () => {
-    window.location = 'payment.html'
-}
 
 
 
