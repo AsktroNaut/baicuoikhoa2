@@ -104,7 +104,9 @@ header .menu .menu-item:hover {
     opacity: 0.8;
     cursor: pointer;
 }
-
+.logout-section {
+    display: none;
+}
 header .menu .menu-item > i {
     padding-right: 8px
 }

@@ -32,8 +32,16 @@ loginForm.onsubmit = (event) => {
     for (let i = 0; i < currentAccountsOnLocal.length; i++) {
         if (currentAccountsOnLocal[i].username === username) {
             if (currentAccountsOnLocal[i].password === pswd) {
-                isLogin = true
-                return window.location.href = 'index.html'
+                let isLogin = true
+                localStorage.setItem('loginStatus', JSON.stringify(isLogin))
+                Swal.fire(
+                    'THÀNH CÔNG!',
+                    'Đăng nhập thành công! Bạn sẽ được chuyển về trang chủ trong 3s',
+                    
+                    'success',
+                    
+                )
+                return setTimeout(function() {window.location.href = 'index.html'}, 3000) 
             } else {
                 wrongPasswordError.style.display = 'block'
                 return

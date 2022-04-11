@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <title>SEARCHING LIST</title>
 
     <link rel="stylesheet" href="gridOG.css">
     <link rel="stylesheet" href="style.css">
@@ -12,7 +12,6 @@
     <!-- <link rel="stylesheet" href="/slideShow.css"> -->
 </head>
 <body>
-    
     <header id="header">
         <div class="menu">
             <div style="justify-content: right;" class="container row">
@@ -34,11 +33,9 @@
                     <li style="position: relative;">
                         <a href="storage.html" class="nav-item">CỬA HÀNG<i class="bx bx-chevron-down"></i></a>
                         <ul>                                
-                            <li class="subnav"><a href="">TSHIRT</a></li>
-                            <li class="subnav"><a href="">SWEATER</a></li>
-                            <li class="subnav"><a href="">HOODIE</a></li>
-                            <li class="subnav"><a href="">PANTS</a></li>
-                            <li class="subnav"><a href="">ESSENTIAL</a></li>
+                            <li class="subnav"><a data-name="TOP" href="#">TOP</a></li>
+                            <li class="subnav"><a data-name="BOTTOM" href="#">BOTTOM</a></li>
+                            <li class="subnav"><a data-name="ACCESSORIES" href="#">ACCESSORIES</a></li>
                             
                         </ul>
                     </li>
@@ -79,38 +76,40 @@
         </div>
     </header>
 
-
     <main>
-        <div class="login-section container section ">
-            <div class="hero-content section">
-                <h1>/ ĐĂNG NHẬP /</h1>
-            </div>
-            <form class="login-form" action="">
-                <div class="">
-                    <input class="login-username" type="text" placeholder="username" required>
-                </div>
-                <div class="">
-                    <input class="login-password" type="password" placeholder="Mật khẩu" required>
-                </div>
-                
-                <span class="wrong-password-error error-notification">Sai mật khẩu, vui lòng kiểm tra lại!</span>
-                <span class="non-exist-acc-error error-notification">Tài khoản không tồn tại!</span>
-                
-                <div class="login-action">
-                    <a href="register.html">Tạo tài khoản mới</a>
-                    <a style="align-self: right"href="">Quên mật khẩu?</a>
-                    
-                    <button class="login-btn">
-                        ĐĂNG NHẬP
-                    </button>
-    
-                    
+        
+       <div class="searching-list-header hero-content section">
+            <h1>/ DANH SÁCH TÌM KIẾM /</h1>
+            <p>Không tìm thấy kết quả phù hợp!</p>
 
-                </div>
-            </form>
         </div>
 
+        <div class="searching-list-section hero-content section container">
+            <div class="searching-list row">
+                <div class="item-found col l-4"></div>
+                <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}">
+                    <div class="product-frame">
+                        <img style="max-width: 200px" src="./product-image/top/tshirt/11231f.jpg" class="product-img" alt="">
+                        <img style="max-width: 200px" src="./product-image/top/tshirt/11231b.jpg" class="product-img-back" alt="">
+                    </div>
+        
+                    <div class="product-caption">
+                        <h3 class="product-name">Bazic Tee v2.0 / Green</h3>
+                        <p class="product-price">180.000đ</p>
+        
+                    </div>
+        
+                </a>
+                
+            </div>
+
+        </div>
+
+
+
+
     </main>
+
 
 
     <footer>
@@ -135,7 +134,7 @@
                     <a href="">Chính sách bảo mật</a><br>
                     <a href="">Điều khoản dịch vụ</a><br>
                 </div>
-                <div class="col l-3">
+                <div class="col l-3"> 
                     <h3>Thông tin liên hệ</h3>
                     <div>
                         <p><i class="fa-solid fa-location-dot"></i> Số 3, đường Nguyễn Trãi, thị xã Thái Hòa, Nghệ An</p>
@@ -162,14 +161,15 @@
 
 
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./lodash/lodash.js"></script>
     <script src="https://kit.fontawesome.com/bca5eda4f7.js" crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
-    <script src="./js/login.js"></script>
+    <script src="./data/product-data.js"></script>
+    <script src="./js/store.js"></script>
+    <script src="./js/cart.js"></script>
     <script src="./js/loginStatus.js"></script>
+
     
-    
-    
+
 </body>
 </html>
