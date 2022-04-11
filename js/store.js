@@ -48,7 +48,7 @@ renderAllProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
-     
+        let productPriceFormat = formatter.format(currentProductsContent.price)
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}">
                 <div class="product-frame">
@@ -58,7 +58,7 @@ renderAllProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     
@@ -81,6 +81,7 @@ renderTopProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
+        let productPriceFormat = formatter.format(currentProductsContent.price)
      
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
@@ -91,7 +92,7 @@ renderTopProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     
@@ -113,6 +114,7 @@ renderTshirtProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
+        let productPriceFormat = formatter.format(currentProductsContent.price)
      
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
@@ -123,7 +125,7 @@ renderTshirtProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     
@@ -146,6 +148,7 @@ renderSweaterProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
+        let productPriceFormat = formatter.format(currentProductsContent.price)
      
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
@@ -156,7 +159,7 @@ renderSweaterProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     
@@ -179,6 +182,7 @@ renderHoodieProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
+        let productPriceFormat = formatter.format(currentProductsContent.price)
      
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
@@ -189,7 +193,7 @@ renderHoodieProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     
@@ -212,6 +216,7 @@ renderBottomProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
+        let productPriceFormat = formatter.format(currentProductsContent.price)
      
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
@@ -222,7 +227,7 @@ renderBottomProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     
@@ -244,6 +249,7 @@ renderShortProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
+        let productPriceFormat = formatter.format(currentProductsContent.price)
      
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
@@ -254,7 +260,7 @@ renderShortProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     
@@ -276,6 +282,7 @@ renderPantsProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
+        let productPriceFormat = formatter.format(currentProductsContent.price)
      
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
@@ -286,7 +293,7 @@ renderPantsProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     
@@ -308,6 +315,7 @@ renderAccessoryProducts = () => {
         childItem.classList.add('product-card')
         childItem.classList.add('col')
         childItem.classList.add('l-2-4')
+        let productPriceFormat = formatter.format(currentProductsContent.price)
      
         childItem.innerHTML =`
             <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}"">
@@ -318,7 +326,7 @@ renderAccessoryProducts = () => {
     
                 <div class="product-caption">
                     <h3 class="product-name">${currentProductsContent.name}</h3>
-                    <p class="product-price">${currentProductsContent.price}đ</p>
+                    <p class="product-price">${productPriceFormat}</p>
     
                 </div>
     

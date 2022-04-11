@@ -258,6 +258,7 @@ changeNumberOfProductsByJquery = () => {
                     
                     setRemoveBtnsAction()
                     payBillFunc()
+                    
                 }
                 
 
@@ -271,6 +272,47 @@ changeNumberOfProductsByJquery = () => {
 }
 changeNumberOfProductsByJquery()
 
+changeNumberOfProductsByInput = () => {
+    let inputNumberSection = document.querySelectorAll('.input-qty')
+    for (let i = 0; i < inputNumberSection.length; i++) {
+        let currentNumberOfItem = inputNumberSection[i].value
+        console.log('currentNumberOfItem)' ,currentNumberOfItem);
+        inputNumberSection[i].onchange = (event) => {
+            console.log(event);
+
+            let idChangedItem = inputNumberSection[i].getAttribute('name')
+            let numberChanged = inputNumberSection[i].value
+            // if (condition) {
+                
+            // }
+            console.log('idChangedItem ', idChangedItem, 'numberChanged', numberChanged);
+            let changedItem = _.find(currentProductInCart, { id: idChangedItem },);
+            console.log(changedItem);
+            let localCurrentProductNow = JSON.parse(localStorage.getItem('localCart'));
+            console.log(localCurrentProductNow);
+            let newCart = _.reject(localCurrentProductNow, function(o) { return o.id == idChangedItem; });
+            console.log('newCart bây giờ là: ', newCart);
+            let newProductAfterNumberChanging = {
+                id: idChangedItem,
+                number: numberChanged
+            }
+            console.log("newProductAfterNumberChanging" ,newProductAfterNumberChanging);
+            newCart.unshift(newProductAfterNumberChanging);
+            console.log(newCart);
+            localStorage.setItem("localCart", JSON.stringify(newCart));
+            cartSection.innerHTML= ``;
+            renderProductsInCartToHTML();
+            changeNumberOfProductsByJquery()
+            
+            setRemoveBtnsAction()
+            payBillFunc()
+            changeNumberOfProductsByInput()
+            
+        }
+        
+    }
+}
+changeNumberOfProductsByInput()
 
 // hàm chuyển trang khi click thanh toán
 payBillFunc = () => {
@@ -306,6 +348,8 @@ setRemoveBtnsAction = () => {
             setRemoveBtnsAction()
             changeNumberOfProductsByJquery()
             payBillFunc()
+            changeNumberOfProductsByInput()
+            
         })
     }
     console.log('chạy hàm remove');
