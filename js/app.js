@@ -22,8 +22,10 @@ window.addEventListener('scroll', function() {
 
 
 
-
-
+const searchingText = document.querySelector('.search-textbox')
+searchingText.oninput = (e) => {
+    console.log(searchingText.value);
+}
 
 
 

@@ -3,21 +3,18 @@
 
 
 let cartSection = document.querySelector('.cart-section')
-console.log(cartSection);
+
 
 let currentProductInCart = JSON.parse(localStorage.getItem('localCart'));
-console.log(currentProductInCart);
+
 
 let backToStoreBtn = document.querySelector('.cart-overview > a')
 let cartSubtitle = document.querySelector('.cart-overview > p')
 
 if (currentProductInCart.length == 0) {
-    console.log(11111);
-    cartSection.style.display = 'none'
-
-    // cartOverview.style.display = 'block'
     
-    console.log(backToStoreBtn);
+    cartSection.style.display = 'none'
+    // cartOverview.style.display = 'block'
     backToStoreBtn.style.display = 'block'
     cartSubtitle.style.display = 'block'
 
@@ -40,8 +37,7 @@ renderProductsInCartToHTML = () => {
         <div class="product-item-line col l-8"></div>
         <div class="total-bill-calc-section col l-4"></div>
         `
-        console.log(cartMainHTML);
-        console.log(cartSection);
+        
         cartSection.append(cartMainHTML)
 
         // render ra cart-list
@@ -77,7 +73,7 @@ renderProductsInCartToHTML = () => {
             }
         }
         getFullInfomationsOfProductInCart()
-        console.log(infomationsOfProductsList);
+        
 
         // lấy tổng giá tiền của từng item trong cart
         let billPriceArray = [] 
@@ -85,7 +81,7 @@ renderProductsInCartToHTML = () => {
             let result = i.price * i.number
             return billPriceArray.push(result)
         })
-        console.log(billPriceArray);
+        
         // tỉnh tổng giá trị đơn hàng
         let BillPrice = billPriceArray.reduce((total, currentItem) => {
             return total + currentItem
@@ -93,21 +89,20 @@ renderProductsInCartToHTML = () => {
         BillPrice = formatter.format(BillPrice)
         // end hàm 
 
-
         for (let i = 0; i < infomationsOfProductsList.length; i++) {
             // let newinfomationsOfProductsList = _.find
             let item = _.find(allProductsItem, { 'id': infomationsOfProductsList[i].id});
             item.number = infomationsOfProductsList[i].number
-            console.log(item);
+            
             if (typeof(item) == 'object') {
                 let cartChild = document.createElement('div')
                 // tạo card con chứa line sản phẩm
-                // console.log(cartChild);
+                
                 let itemPrice = formatter.format(infomationsOfProductsList[i].price) // chuyển về giá trị tiền tệ
                 
                 let itemTotalPrice =  (infomationsOfProductsList[i].price * infomationsOfProductsList[i].number)
                 itemTotalPrice = formatter.format(itemTotalPrice)
-                console.log();
+                
                 cartChild.innerHTML = `
                 <div class="line-item row">
                     <div class="item-image col">
@@ -120,7 +115,7 @@ renderProductsInCartToHTML = () => {
                         <div class="item-quantity">
                             <div class="buttons_added">
                                 <input class="minus is-form" type="button" value="-">
-                                <input aria-label="quantity" class="input-qty" max="50" min="1"  name="${infomationsOfProductsList[i].id}" type="number" value="${infomationsOfProductsList[i].number}" onchange="console.log('thay đổi giá trị')">
+                                <input aria-label="quantity" class="input-qty" max="100" min="1"  name="${infomationsOfProductsList[i].id}" type="number" value="${infomationsOfProductsList[i].number}" onchange="console.log('thay đổi giá trị')">
                                 <input class="plus is-form" type="button" value="+">
                             </div>
                         </div>
@@ -162,44 +157,119 @@ renderProductsInCartToHTML = () => {
             </div>
         `
         totalBillCalcSection.append(invoiceContent) //hàm đẩy nội dung vào tổng bill
-        console.log('chạy hàm if trong render');
+        
     }
     
 }
 renderProductsInCartToHTML()
 
+reloadBillCalcSection = () => {
+    
+}
 
+
+
+
+
+// hàm thay đổi số lượng sản phẩm trong cart
+// changeNumberOfProductsInCart = () => {
+//     let numberOfProductList = document.querySelectorAll('.input-qty')
+//     console.log(numberOfProductList);
+//     for (let i = 0; i < numberOfProductList.length; i++) {
+//         console.log(numberOfProductList[i].value);
+//         // numberOfProductList[i].value.onchange = () => {
+//         //     console.log(numberOfProductList[i].value);
+//         // }
+        
+//     }
+// }
+// changeNumberOfProductsInCart()
 changeNumberOfProductsByJquery = () => {
     $('input.input-qty').each(function() {
         var $this = $(this),
-          qty = $this.parent().find('.is-form'),
-          min = Number($this.attr('min')),
-          max = Number($this.attr('max'))
+        qty = $this.parent().find('.is-form'),
+        min = Number($this.attr('min')),
+        max = Number($this.attr('max'))
+        
         if (min == 0) {
-          var d = 0
-        } else d = min
-        $(qty).on('click', function() {
-          if ($(this).hasClass('minus')) {
-            if (d > min) d += -1
-          } else if ($(this).hasClass('plus')) {
-            var x = Number($this.val()) + 1
-            if (x <= max) d += 1
-          }
-          $this.attr('value', d).val(d)
+        var d = 0
+        } else d = Number($this.attr('value'))
+        console.log($(qty));
+        $(qty).on('click', function(e) {
+            // e.preventDefault()
+            console.log($this.attr('value'));
+            if ($(this).hasClass('minus')) {
+                if (d > min) {
+                    console.log("ăn hàm trừ");
+                    d += -1
+                    console.log(d);
+                    let idChangedItem = $this.attr('name')
+                    let numberChanged = d
+                    console.log(idChangedItem, numberChanged);
+                    let changedItem = _.find(currentProductInCart, { id: idChangedItem },);
+                    console.log(changedItem);
+                    let localCurrentProductNow = JSON.parse(localStorage.getItem('localCart'));
+                    console.log(localCurrentProductNow);
+                    let newCart = _.reject(localCurrentProductNow, function(o) { return o.id == idChangedItem; });
+                    console.log('newCart bây giờ là: ', newCart);
+                    let newProductAfterNumberChanging = {
+                        id: idChangedItem,
+                        number: numberChanged
+                    }
+                    console.log("newProductAfterNumberChanging" ,newProductAfterNumberChanging);
+                    newCart.unshift(newProductAfterNumberChanging);
+                    console.log(newCart);
+                    
+                    cartSection.innerHTML= ``;
+                    localStorage.setItem("localCart", JSON.stringify(newCart));
+                    renderProductsInCartToHTML();
+                    changeNumberOfProductsByJquery()
+                    
+                    setRemoveBtnsAction()
+                    payBillFunc()
+                } 
+                
+            } else if ($(this).hasClass('plus')) {
+                var x = Number($this.val()) + 1
+                console.log(x);
+                if (x <= max) {
+                    d += 1
+
+                    let idChangedItem = $this.attr('name')
+                    let numberChanged = x
+                    console.log(idChangedItem, numberChanged);
+                    let changedItem = _.find(currentProductInCart, { id: idChangedItem },);
+                    console.log(changedItem);
+                    let localCurrentProductNow = JSON.parse(localStorage.getItem('localCart'));
+                    console.log(localCurrentProductNow);
+                    let newCart = _.reject(localCurrentProductNow, function(o) { return o.id == idChangedItem; });
+                    console.log('newCart bây giờ là: ', newCart);
+                    let newProductAfterNumberChanging = {
+                        id: idChangedItem,
+                        number: numberChanged
+                    }
+                    console.log("newProductAfterNumberChanging" ,newProductAfterNumberChanging);
+                    newCart.unshift(newProductAfterNumberChanging);
+                    console.log(newCart);
+                    localStorage.setItem("localCart", JSON.stringify(newCart));
+                    cartSection.innerHTML= ``;
+                    renderProductsInCartToHTML();
+                    changeNumberOfProductsByJquery()
+                    
+                    setRemoveBtnsAction()
+                    payBillFunc()
+                }
+                
+
+            }
+        console.log('hàm chạy');
+        $this.attr('value', d).val(d)
+
+        
         })
     })
 }
 changeNumberOfProductsByJquery()
-
-
-// hàm thay đổi số lượng sản phẩm trong cart
-changeNumberOfProductsInCart = () => {
-    $('input.input-qty').change(function() {
-        console.log('ok nhé');
-    })
-
-}
-changeNumberOfProductsInCart()
 
 
 // hàm chuyển trang khi click thanh toán
@@ -208,6 +278,7 @@ payBillFunc = () => {
     payBtn.onclick = () => {
         window.location = 'payment.html'
     }
+    console.log('chạy hàm Pay BIll');
 }    
 payBillFunc()
 
@@ -218,34 +289,32 @@ payBillFunc()
 
 setRemoveBtnsAction = () => {
     let removeItemBtns = document.getElementsByClassName('remove-item-btn')
-    console.log(removeItemBtns);
     for (let i = 0; i < removeItemBtns.length; i++) {
-    
         removeItemBtns[i].addEventListener("click", (e) => {
-            console.log(removeItemBtns[i]);
             e.preventDefault()
             let itemRemoveID = removeItemBtns[i].getAttribute("data-productID");
             let removeItem = _.find(currentProductInCart, { id: itemRemoveID },);
-            console.log(removeItem);
+            
             let localCurrentProduct = JSON.parse(localStorage.getItem('localCart'))
-            console.log(localCurrentProduct);
+            
             let newCart = _.reject(localCurrentProduct, function(o) { return o.id == itemRemoveID; });
-            console.log('newCart: ', newCart); 
+            
             localStorage.setItem("localCart", JSON.stringify(newCart));
             cartSection.innerHTML= ``
             renderProductsInCartToHTML()
-            console.log(123);
+            
             setRemoveBtnsAction()
+            changeNumberOfProductsByJquery()
+            payBillFunc()
         })
     }
-    payBillFunc()
-    changeNumberOfProductsByJquery()
     console.log('chạy hàm remove');
 }
 setRemoveBtnsAction()
 
 
-// accumulation
+// thay đổi số lượng sản phẩm
+
 
 
 

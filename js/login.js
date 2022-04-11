@@ -15,7 +15,7 @@ usernameSection.oninput = () => {
     wrongPasswordError.style.display = 'none'
     nonExistAccountError.style.display = 'none'
 }
-nonExistAccountError.oninput = () => {
+passwordSection.oninput = () => {
     wrongPasswordError.style.display = 'none'
     nonExistAccountError.style.display = 'none'
 }

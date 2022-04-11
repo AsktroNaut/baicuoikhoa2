@@ -58,8 +58,8 @@ registerFunction = () => {
         Swal.fire(
             'THÀNH CÔNG!',
             'Đăng kí tài khoản mới thành công!',
-            'success'
-            
+            'success',
+            "#DD6B55",
         )
         return
     } else {
@@ -91,7 +91,8 @@ registerFunction = () => {
                 Swal.fire(
                     'THÀNH CÔNG!',
                     'Đăng kí tài khoản mới thành công!',
-                    'success'
+                    'success',
+                    "#DD6B55",
                 )
                 return
             }
