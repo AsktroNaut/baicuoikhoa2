@@ -28,6 +28,15 @@ searchingText.oninput = (e) => {
 }
 
 
+let getUserEmailForm = document.querySelector('.new-letter-form')
+console.log(getUserEmailForm);
+getUserEmailForm.onsubmit = (e) => {
+    e.preventDefault()
+    
+}
+
+
+
 
 // storage
 
