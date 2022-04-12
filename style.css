@@ -214,30 +214,38 @@ header .navbar .nav-action .nav-cart {
 }
 
 header .navbar .nav-action .search-textbox {
-    position: relative;
-    right: 20px; 
+   
     padding-left: 12px;
     width: 240px;
     line-height: 36px;
-    /* border-top-left-radius: 8px; */
-    /* border-bottom-left-radius: 8px; */
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 2px solid rgb(143, 28, 28);
     
-    /* border: 1px solid rgb(143, 28, 28); */
-    /* outline: 2px inset rgb(143, 28, 28); */
-    /* outline-offset: -2px; */
+    height: 40px
+
+
+}
+
+header .navbar .nav-action .search-textbox:focus {
+    border: 2px solid rgb(143, 28, 28);
 
 }
 
 header .navbar .nav-action .search-btn {
-    /* padding: 8px 12px; */
+    position: absolute;
+    left: 232px;
+    top: 13px;
     min-width: 40px;
     line-height: 40px;
     background-color: rgb(143, 28, 28);
-
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    z-index:123!important;
+    height: 40px
 
+}
+header .navbar .nav-action .search-btn:hover {
+    opacity: 1!important;
 }
 header .navbar .nav-action .search-btn > i {
     color: white;

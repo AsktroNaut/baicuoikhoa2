@@ -22,17 +22,14 @@ window.addEventListener('scroll', function() {
 
 
 
-const searchingText = document.querySelector('.search-textbox')
-searchingText.oninput = (e) => {
-    console.log(searchingText.value);
-}
+let searchBtn = document.querySelector('.search-btn')
+console.log(searchBtn);
+searchBtn.onclick = (e) => {
+    e.preventDefault();
+    let searchKey = document.querySelector('.search-textbox').value
+    console.log(searchKey);
+    window.location.href = `search-list.html?search-data=${searchKey}`
 
-
-let getUserEmailForm = document.querySelector('.new-letter-form')
-console.log(getUserEmailForm);
-getUserEmailForm.onsubmit = (e) => {
-    e.preventDefault()
-    
 }
 
 

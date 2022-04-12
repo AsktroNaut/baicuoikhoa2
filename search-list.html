@@ -46,16 +46,8 @@
                 
                 <div class="nav-action">
                     <form style="display: inline" class="nav-searching">
-                        <input  class="searching-btn" type="text" placeholder="Nhập sản phẩm...">
-                        <!-- <div class="searching-list">
-                            <div class="cart-title">Giỏ hàng</div>
-                            <div class="cart-view row">
-                                .col.l-
-                            </div>
-                            <div class="cart-total">
-
-                            </div>
-                        </div> -->
+                        <input  class="search-textbox" type="text" placeholder="Nhập sản phẩm...">
+                        <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                     <div style="display: inline" class="nav-cart">
                         <a href="cart.html">
@@ -80,27 +72,13 @@
         
        <div class="searching-list-header hero-content section">
             <h1>/ DANH SÁCH TÌM KIẾM /</h1>
-            <p>Không tìm thấy kết quả phù hợp!</p>
+            <h3>Kết quả tìm kiếm cho: </h3>
 
         </div>
 
         <div class="searching-list-section hero-content section container">
             <div class="searching-list row">
-                <div class="item-found col l-4"></div>
-                <a title="${currentProductsContent.id}" href="product-detail.html?id=${currentProductsContent.id}">
-                    <div class="product-frame">
-                        <img style="max-width: 200px" src="./product-image/top/tshirt/11231f.jpg" class="product-img" alt="">
-                        <img style="max-width: 200px" src="./product-image/top/tshirt/11231b.jpg" class="product-img-back" alt="">
-                    </div>
-        
-                    <div class="product-caption">
-                        <h3 class="product-name">Bazic Tee v2.0 / Green</h3>
-                        <p class="product-price">180.000đ</p>
-        
-                    </div>
-        
-                </a>
-                
+                <!-- //phần render -->
             </div>
 
         </div>
@@ -168,6 +146,7 @@
     <script src="./js/store.js"></script>
     <script src="./js/cart.js"></script>
     <script src="./js/loginStatus.js"></script>
+    <script src="./js/search-list.js"></script>
 
     
 
