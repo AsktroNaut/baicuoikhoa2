@@ -25,14 +25,12 @@ loginForm.onsubmit = (event) => {
     event.preventDefault();
     let username = event.target[0].value
     let pswd = event.target[1].value
-    console.log(username, pswd);
     let currentAccountsOnLocal = JSON.parse(localStorage.getItem('localAccounts'))
-    console.log(currentAccountsOnLocal);
+    let checkUserNameResult = currentAccountsOnLocal.find(account => account.username === username)
 
-    for (let i = 0; i < currentAccountsOnLocal.length; i++) {
-        if (currentAccountsOnLocal[i].username === username) {
-            if (currentAccountsOnLocal[i].password === pswd) {
-                let isLogin = true
+    if (checkUserNameResult) {
+        if (checkUserNameResult.password === pswd) {
+            let isLogin = true
                 localStorage.setItem('loginStatus', JSON.stringify(isLogin))
                 Swal.fire(
                     'THÀNH CÔNG!',
@@ -41,23 +39,13 @@ loginForm.onsubmit = (event) => {
                     'success',
                     
                 )
-                return setTimeout(function() {window.location.href = 'index.html'}, 3000) 
-            } else {
-                wrongPasswordError.style.display = 'block'
-                return
-
-            }
+                return setTimeout(function() {window.location.href = 'index.html'}, 2500) 
         } else {
-            nonExistAccountError.style.display = 'block'
-            return
+            return wrongPasswordError.style.display = 'block'
         }
-        
+    } else {
+        return nonExistAccountError.style.display = 'block'
     }
-    
-        
-console.log(isLogin);
-    
-    
 }
 
 
