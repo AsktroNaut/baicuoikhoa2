@@ -1,13 +1,13 @@
 let loginForm = document.querySelector('.login-form')
-console.log(loginForm);
+
 
 const wrongPasswordError = document.querySelector('.wrong-password-error')
 const nonExistAccountError = document.querySelector('.non-exist-acc-error')
-console.log(wrongPasswordError, nonExistAccountError);
+
 
 const usernameSection = document.querySelector('.login-username')
 const passwordSection = document.querySelector('.login-password')
-console.log(usernameSection, passwordSection);
+
 
 
 // ẩn lỗi khi nhập trường

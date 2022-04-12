@@ -41,7 +41,7 @@ let typeOfProduct = document.querySelector('.product-header')
 
 // hàm render tất cả sản phẩm
 renderAllProducts = () => {
-    typeOfProduct.innerHTML = `TẤT CẢ SẢN PHẨM`
+    typeOfProduct.innerText = `TẤT CẢ SẢN PHẨM`
     for (let i = 0; i < allProducts.length; i++) {
         let currentProductsContent = allProducts[i]
         let childItem = document.createElement("div")

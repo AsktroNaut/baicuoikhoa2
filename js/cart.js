@@ -115,7 +115,7 @@ renderProductsInCartToHTML = () => {
                         <div class="item-quantity">
                             <div class="buttons_added">
                                 <input class="minus is-form" type="button" value="-">
-                                <input aria-label="quantity" class="input-qty" max="100" min="1"  name="${infomationsOfProductsList[i].id}" type="number" value="${infomationsOfProductsList[i].number}" onchange="console.log('thay đổi giá trị')">
+                                <input aria-label="quantity" class="input-qty" max="100" min="1"  name="${infomationsOfProductsList[i].id}" type="number" value="${infomationsOfProductsList[i].number}" >
                                 <input class="plus is-form" type="button" value="+">
                             </div>
                         </div>
@@ -194,31 +194,31 @@ changeNumberOfProductsByJquery = () => {
         if (min == 0) {
         var d = 0
         } else d = Number($this.attr('value'))
-        console.log($(qty));
+        
         $(qty).on('click', function(e) {
             // e.preventDefault()
-            console.log($this.attr('value'));
+            
             if ($(this).hasClass('minus')) {
                 if (d > min) {
-                    console.log("ăn hàm trừ");
+                    
                     d += -1
-                    console.log(d);
+                    
                     let idChangedItem = $this.attr('name')
                     let numberChanged = d
-                    console.log(idChangedItem, numberChanged);
+                    
                     let changedItem = _.find(currentProductInCart, { id: idChangedItem },);
-                    console.log(changedItem);
+                    
                     let localCurrentProductNow = JSON.parse(localStorage.getItem('localCart'));
-                    console.log(localCurrentProductNow);
+                    
                     let newCart = _.reject(localCurrentProductNow, function(o) { return o.id == idChangedItem; });
-                    console.log('newCart bây giờ là: ', newCart);
+                    
                     let newProductAfterNumberChanging = {
                         id: idChangedItem,
                         number: numberChanged
                     }
-                    console.log("newProductAfterNumberChanging" ,newProductAfterNumberChanging);
+                    
                     newCart.unshift(newProductAfterNumberChanging);
-                    console.log(newCart);
+                    
                     
                     cartSection.innerHTML= ``;
                     localStorage.setItem("localCart", JSON.stringify(newCart));
@@ -231,26 +231,26 @@ changeNumberOfProductsByJquery = () => {
                 
             } else if ($(this).hasClass('plus')) {
                 var x = Number($this.val()) + 1
-                console.log(x);
+                
                 if (x <= max) {
                     d += 1
 
                     let idChangedItem = $this.attr('name')
                     let numberChanged = x
-                    console.log(idChangedItem, numberChanged);
+                    
                     let changedItem = _.find(currentProductInCart, { id: idChangedItem },);
-                    console.log(changedItem);
+                    
                     let localCurrentProductNow = JSON.parse(localStorage.getItem('localCart'));
-                    console.log(localCurrentProductNow);
+                    
                     let newCart = _.reject(localCurrentProductNow, function(o) { return o.id == idChangedItem; });
-                    console.log('newCart bây giờ là: ', newCart);
+                    
                     let newProductAfterNumberChanging = {
                         id: idChangedItem,
                         number: numberChanged
                     }
-                    console.log("newProductAfterNumberChanging" ,newProductAfterNumberChanging);
+                    
                     newCart.unshift(newProductAfterNumberChanging);
-                    console.log(newCart);
+                    
                     localStorage.setItem("localCart", JSON.stringify(newCart));
                     cartSection.innerHTML= ``;
                     renderProductsInCartToHTML();
@@ -263,7 +263,7 @@ changeNumberOfProductsByJquery = () => {
                 
 
             }
-        console.log('hàm chạy');
+        
         $this.attr('value', d).val(d)
 
         
@@ -278,27 +278,27 @@ changeNumberOfProductsByInput = () => {
         let currentNumberOfItem = inputNumberSection[i].value
         console.log('currentNumberOfItem)' ,currentNumberOfItem);
         inputNumberSection[i].onchange = (event) => {
-            console.log(event);
+            
 
             let idChangedItem = inputNumberSection[i].getAttribute('name')
             let numberChanged = inputNumberSection[i].value
             // if (condition) {
                 
             // }
-            console.log('idChangedItem ', idChangedItem, 'numberChanged', numberChanged);
+            
             let changedItem = _.find(currentProductInCart, { id: idChangedItem },);
-            console.log(changedItem);
+            
             let localCurrentProductNow = JSON.parse(localStorage.getItem('localCart'));
-            console.log(localCurrentProductNow);
+            
             let newCart = _.reject(localCurrentProductNow, function(o) { return o.id == idChangedItem; });
-            console.log('newCart bây giờ là: ', newCart);
+            
             let newProductAfterNumberChanging = {
                 id: idChangedItem,
                 number: numberChanged
             }
-            console.log("newProductAfterNumberChanging" ,newProductAfterNumberChanging);
+            
             newCart.unshift(newProductAfterNumberChanging);
-            console.log(newCart);
+            
             localStorage.setItem("localCart", JSON.stringify(newCart));
             cartSection.innerHTML= ``;
             renderProductsInCartToHTML();
@@ -320,7 +320,7 @@ payBillFunc = () => {
     payBtn.onclick = () => {
         window.location = 'payment.html'
     }
-    console.log('chạy hàm Pay BIll');
+    
 }    
 payBillFunc()
 
@@ -352,7 +352,7 @@ setRemoveBtnsAction = () => {
             
         })
     }
-    console.log('chạy hàm remove');
+    
 }
 setRemoveBtnsAction()
 

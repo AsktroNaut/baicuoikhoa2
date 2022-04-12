@@ -3,9 +3,9 @@
 
   
 const billingList = document.querySelector('.billing-list')
-console.log(billingList);
 
-console.log(currentProductInCart);
+
+
 // hàm lấy tất cả thông tin list item 
 let infomationsOfProductsList = []
 getFullInfomationsOfProductInCart = () => {
@@ -36,7 +36,7 @@ renderPaymentListProduct = () => {
     infomationsOfProductsList.forEach((item) => {
         let totalItemPrice = item.number * item.price
         totalItemPrice = formatter.format(totalItemPrice)
-        console.log(totalItemPrice);
+
         let childRenderItem = document.createElement('div')
         childRenderItem.className = 'billing-item row'
         childRenderItem.innerHTML = `
@@ -60,17 +60,17 @@ renderPaymentListProduct()
 // render các loại phí và tổng tiền 
 let currentDiscountAmount = 0
 const discountApplyButton = document.querySelector('.btn-apply')
-console.log(discountApplyButton);
+
 discountApplyButton.onclick = (e) => {
     e.preventDefault();
     let userDiscountValue = document.querySelector('.discount-section > input').value
-    console.log(userDiscountValue);
+
     for (let i = 0; i < discountCode.length; i++) {
         if(discountCode[i].id == userDiscountValue) {
             currentDiscountAmount = discountCode[i].discountAmount
         } 
     }
-    console.log(currentDiscountAmount);
+
     renderTotalBillPrice()
 }
 
@@ -80,7 +80,7 @@ const shippingProvinceSection = document.getElementsByName('calc_shipping_provin
 const shippingDistrictSection = document.getElementsByName('calc_shipping_district')[0]
 
 shippingProvinceSection.onchange = () => {
-    console.log(shippingProvinceSection.value);
+
     if (shippingProvinceSection.value == "24" || shippingProvinceSection.value == "31" || shippingProvinceSection.value == "15") {
         deliveryAmount = 20000
     } else {
@@ -90,9 +90,9 @@ shippingProvinceSection.onchange = () => {
 }
 
 
-console.log(shippingProvinceSection);
+
 const amountSection = document.querySelector('.billing-amount-section')
-console.log(amountSection);
+
 
 
 // hàm render giá đơn hàng
@@ -102,20 +102,19 @@ renderTotalBillPrice = () => {
         let result = i.price * i.number
         return billPriceArray.push(result)
     })
-    console.log(billPriceArray);
+
     // tỉnh tổng giá trị đơn hàng
     let BillPrice = billPriceArray.reduce((total, currentItem) => {
         return total + currentItem
     })
     
-    console.log(BillPrice);
+
     
     // giá trị discount
     let discountAmount = (BillPrice * currentDiscountAmount)
-    console.log(currentDiscountAmount);
-    console.log(discountAmount);
+
     let totalBillNumber = (BillPrice - discountAmount + deliveryAmount)
-    console.log(deliveryAmount);
+
 
     
     let children = document.createElement('div')
@@ -149,19 +148,18 @@ renderTotalBillPrice()
 
 
 let confirmBillingBtn = document.querySelector('.billing-confirm-btn')
-console.log(confirmBillingBtn);
 
 
 
 confirmBillingBtn.onclick = (e) => {
     e.stopImmediatePropagation()
-    alert('ok không?')
     Swal.fire(
         'ĐÃ ĐẶT HÀNG THÀNH CÔNG!',
         'Cảm ơn bạn đã tin tưởng và sử dụng sản phẩm của TAMMY!',
         'success'
     )
-    window.location = 'index.html'
+    return setTimeout(() => {window.location = 'index.html'}, 2500)
+    
 }
 
 
