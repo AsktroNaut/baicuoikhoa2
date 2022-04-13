@@ -74,7 +74,7 @@ discountApplyButton.onclick = (e) => {
     renderTotalBillPrice()
 }
 
-let deliveryAmount = 0
+let deliveryAmount = 30000
 // hàm tính giá trị deliveryAmount
 const shippingProvinceSection = document.getElementsByName('calc_shipping_provinces')[0]
 const shippingDistrictSection = document.getElementsByName('calc_shipping_district')[0]
@@ -83,8 +83,6 @@ shippingProvinceSection.onchange = () => {
 
     if (shippingProvinceSection.value == "24" || shippingProvinceSection.value == "31" || shippingProvinceSection.value == "15") {
         deliveryAmount = 20000
-    } else {
-        deliveryAmount = 30000
     }
     renderTotalBillPrice()
 }
@@ -147,12 +145,12 @@ renderTotalBillPrice = () => {
 renderTotalBillPrice()
 
 
-let confirmBillingBtn = document.querySelector('.billing-confirm-btn')
-
-
-
-confirmBillingBtn.onclick = (e) => {
+// let confirmBillingBtn = document.querySelector('.billing-confirm-btn')
+let informationOfDeliveryForm = document.querySelector('.field-required')
+console.log(informationOfDeliveryForm);
+informationOfDeliveryForm.onsubmit = (e) => {
     e.stopImmediatePropagation()
+    
     Swal.fire(
         'ĐÃ ĐẶT HÀNG THÀNH CÔNG!',
         'Cảm ơn bạn đã tin tưởng và sử dụng sản phẩm của TAMMY!',
