@@ -1,14 +1,14 @@
 
 
 let urlSearchingKey =  location.search.split('search-data=')[1]
-console.log(urlSearchingKey);
+
 
 
 
 const searchingListHeaderDesc = document.querySelector('.searching-list-header > h3')
 
 const searchingList = document.querySelector('.searching-list')
-console.log(searchingList);
+
 
 // render sản phẩm searching
 searchingRenderFunc = () => {
@@ -20,11 +20,11 @@ searchingRenderFunc = () => {
         Kết quả tìm kiếm cho: "${urlSearchingKey}"
         `
         if ( _.includes(x, y) )  {
-            console.log('được trùng');
+
     
             let parentDiv = document.createElement('div')
             parentDiv.className = 'item-found col l-4'
-            console.log(parentDiv);
+
             let priceOfProduct = formatter.format(productMatch.price)
             // idOfProduct = productMatch.id.
             let child = document.createElement('div')

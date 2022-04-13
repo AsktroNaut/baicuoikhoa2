@@ -23,11 +23,11 @@ window.addEventListener('scroll', function() {
 
 
 let searchBtn = document.querySelector('.search-btn')
-console.log(searchBtn);
+
 searchBtn.onclick = (e) => {
     e.preventDefault();
     let searchKey = document.querySelector('.search-textbox').value
-    console.log(searchKey);
+
     window.location.href = `search-list.html?search-data=${searchKey}`
 
 }

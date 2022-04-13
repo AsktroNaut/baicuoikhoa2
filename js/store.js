@@ -29,12 +29,12 @@ loadProductIntoTemporaryList = () => {
 
 
 let productsDisplaySection = document.querySelector('.product-display')
-console.log(productsDisplaySection);
+
 
 
 let productsContainer = document.querySelector('.product-area')
 
-console.log(productsContainer); // cái này là <div class="product-area row">
+
 let typeOfProduct = document.querySelector('.product-header')
 
 

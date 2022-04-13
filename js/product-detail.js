@@ -2,7 +2,7 @@
 
 
 let urlProductId =  location.search.split('id=')[1]
-console.log(urlProductId);
+
 
 //hàm lấy thông tin của sản phẩm hiện tại
 const getProductInfomations = () => {
@@ -13,7 +13,7 @@ const getProductInfomations = () => {
 }}
 
 let currentProductInfomations = getProductInfomations()
-console.log(currentProductInfomations);
+
 
 
 // hàm render nội dung thẻ sản phẩm
@@ -24,7 +24,7 @@ renderProductCardToHTML = () => {
     
     // chuyển về tiền tệ
     let currentProductPrice = formatter.format(currentProductInfomations.price)
-    console.log(currentProductPrice);
+
     // append nội dung
     productRenderContainer.innerHTML = `
         <div class="product-slide col l-5">
@@ -98,7 +98,7 @@ renderProductCardToHTML()
 
 // tạo cart và đẩy vào localStorage
 let addToCartBtn = document.querySelector('#add-product-to-cart')
-console.log(addToCartBtn);
+
 
 
 
