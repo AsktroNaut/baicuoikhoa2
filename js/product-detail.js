@@ -115,6 +115,7 @@ addProductToCartBtn.addEventListener('click', (e) => {
         'Đã thêm sản phẩm vào giỏ hàng!',
         'success'
     )
+    showNumberOfProductInCart()
     
 })
 
@@ -194,6 +195,7 @@ buyProductBtn.onclick = (e) => {
     e.preventDefault()
     addProductToCartFunction()
     window.location = 'payment.html'
+    showNumberOfProductInCart()
 
 }
 

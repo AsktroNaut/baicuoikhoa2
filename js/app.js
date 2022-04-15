@@ -34,17 +34,22 @@ searchBtn.onclick = (e) => {
 
 
 
+let cartNumberNoti = document.querySelector('.header-cart-num')
+console.log(cartNumberNoti);
+showNumberOfProductInCart = () => {
+    let currentAmountOfLocalProducts = JSON.parse(localStorage.getItem('localCart'))
+    console.log(currentAmountOfLocalProducts);
+    if (currentAmountOfLocalProducts == null) {
+        cartNumberNoti.style.display = 'none'
+    } else {
+        cartNumberNoti.style.display = 'block'
+        cartNumberNoti.innerHTML = `
+        ${currentAmountOfLocalProducts.length}
+        `
+    }
+}
+showNumberOfProductInCart()
 
-// storage
-
-// CHUYỂN TRANG VÀ TỰ ĐỘNG LOAD SẢN PHẨM TOP, BOTTOM, ACC
-// var searchingTopProductFromHeader = document.querySelector("[data-name='MAIN-TOP']")
-// console.log(searchingTopProductFromHeader);
-// searchingTopProductFromHeader.addEventListener("click", (event) => {
-//     // event.preventDefault()
-//     window.location = "storage.html"
-//     renderTopProducts()
-// })
 
 
 

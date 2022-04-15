@@ -1,10 +1,5 @@
 
-
-
-  
 const billingList = document.querySelector('.billing-list')
-
-
 
 // hàm lấy tất cả thông tin list item 
 let infomationsOfProductsList = []
@@ -28,8 +23,7 @@ getFullInfomationsOfProductInCart = () => {
 }
 getFullInfomationsOfProductInCart()
 
-
-
+// hàm render list sản phẩm
 renderPaymentListProduct = () => {
     // tính tổng giá trị bill
     // render từng item
@@ -51,8 +45,7 @@ renderPaymentListProduct = () => {
         // billingList.innerHTML = ''
         billingList.append(childRenderItem)
     })
-} 
-
+}
 renderPaymentListProduct()
 
 
@@ -68,9 +61,9 @@ discountApplyButton.onclick = (e) => {
     for (let i = 0; i < discountCode.length; i++) {
         if(discountCode[i].id == userDiscountValue) {
             currentDiscountAmount = discountCode[i].discountAmount
+
         } 
     }
-
     renderTotalBillPrice()
 }
 
@@ -83,17 +76,17 @@ shippingProvinceSection.onchange = () => {
 
     if (shippingProvinceSection.value == "24" || shippingProvinceSection.value == "31" || shippingProvinceSection.value == "15") {
         deliveryAmount = 20000
+    } else {
+        deliveryAmount = 30000
+
     }
     renderTotalBillPrice()
 }
 
 
 
-const amountSection = document.querySelector('.billing-amount-section')
-
-
-
 // hàm render giá đơn hàng
+const amountSection = document.querySelector('.billing-amount-section')
 renderTotalBillPrice = () => {
     let billPriceArray = [] 
     infomationsOfProductsList.forEach(i => {
@@ -105,42 +98,39 @@ renderTotalBillPrice = () => {
     let BillPrice = billPriceArray.reduce((total, currentItem) => {
         return total + currentItem
     })
-    
 
-    
+    let billPriceVnd = formatter.format(BillPrice)
     // giá trị discount
     let discountAmount = (BillPrice * currentDiscountAmount)
-
+    let discountAmountVnd = formatter.format(discountAmount)
+    console.log(discountAmount);
     let totalBillNumber = (BillPrice - discountAmount + deliveryAmount)
-
-
-    
+    let totalBillVnd = formatter.format(totalBillNumber)
+    let deliveryAmountVnd = formatter.format(deliveryAmount)
     let children = document.createElement('div')
     children.innerHTML = `
     <div class="billing-amount row underline">
         <div class="billing-cost row">
             <h3>Tạm tính:</h3>
-            <span class="billing-temporary-amount">${BillPrice}đ</span>
+            <span class="billing-temporary-amount">${billPriceVnd}</span>
         </div>
         <div class="billing-cost row">
             <h3>Giảm giá:</h3>
-            <span class="billing-discount-amount">${discountAmount}đ</span>
+            <span class="billing-discount-amount">${discountAmountVnd}</span>
         </div>
         <div class="billing-cost row">
             <h3>Phí vận chuyển:</h3>
-            <span class="billing-discount-amount">${deliveryAmount}đ</span>
+            <span class="billing-discount-amount">${deliveryAmountVnd}</span>
         </div>
     </div>
 
     <div class="billing-total-amount section">
-        
         <h1>Tổng cộng:</h1>
-        <span class="billing-final-amount">${totalBillNumber}đ</span>
+        <span class="billing-final-amount">${totalBillVnd}</span>
     </div>
 `
     amountSection.innerHTML = ''
     amountSection.append(children)
-    
 }
 renderTotalBillPrice()
 
@@ -150,14 +140,12 @@ let informationOfDeliveryForm = document.querySelector('.field-required')
 console.log(informationOfDeliveryForm);
 informationOfDeliveryForm.onsubmit = (e) => {
     e.stopImmediatePropagation()
-    
     Swal.fire(
         'ĐÃ ĐẶT HÀNG THÀNH CÔNG!',
         'Cảm ơn bạn đã tin tưởng và sử dụng sản phẩm của TAMMY!',
         'success'
     )
     return setTimeout(() => {window.location = 'index.html'}, 2500)
-    
 }
 
 

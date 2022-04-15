@@ -158,7 +158,7 @@ header .navbar .nav .nav-item {
     /* display: inline-block; */
     line-height: 64px;
     padding: 24px 32px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
 
 
@@ -198,7 +198,7 @@ header .navbar .nav ul li:hover>a {
     cursor: pointer;
 }
 
-.head-cart-icon,
+
 .head-searching-icon {
     width: 24px;
     line-height: 100px;
@@ -210,11 +210,11 @@ header .navbar .nav-action {
     position: relative;
 }
 header .navbar .nav-action .nav-cart {
-    margin-left: 12px
+    margin-left: 12px;
+    position: relative;
 }
 
 header .navbar .nav-action .search-textbox {
-   
     padding-left: 12px;
     width: 240px;
     line-height: 36px;
@@ -226,6 +226,25 @@ header .navbar .nav-action .search-textbox {
 
 
 }
+
+header .navbar .nav-action .cart-icon {
+    width: 30px;
+}
+
+header .navbar .nav-action .header-cart-num {
+    border-radius: 50%;
+    background-color: rgb(143, 28, 28);
+    padding: 0px 6px;
+    /* font-size: 14px; */
+    border: 2px solid rgb(143, 28, 28);
+    color: white;
+    position: absolute;
+    left: 97px;
+    top: -12px;
+    font-size: 13px;
+}
+
+
 
 header .navbar .nav-action .search-textbox:focus {
     border: 2px solid rgb(143, 28, 28);

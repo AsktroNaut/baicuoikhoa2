@@ -10,7 +10,7 @@ let currentProductInCart = JSON.parse(localStorage.getItem('localCart'));
 
 let backToStoreBtn = document.querySelector('.cart-overview > a')
 let cartSubtitle = document.querySelector('.cart-overview > p')
-
+console.log(currentProductInCart.length);
 if (currentProductInCart.length == 0) {
     
     cartSection.style.display = 'none'
@@ -314,6 +314,8 @@ changeNumberOfProductsByInput = () => {
 }
 changeNumberOfProductsByInput()
 
+
+
 // hàm chuyển trang khi click thanh toán
 payBillFunc = () => {
     let payBtn = document.querySelector('.order-pay-btn')
@@ -324,11 +326,10 @@ payBillFunc = () => {
 }    
 payBillFunc()
 
+
+
+
 // hàm remove sản phẩm trong cart
-
-
-
-
 setRemoveBtnsAction = () => {
     let removeItemBtns = document.getElementsByClassName('remove-item-btn')
     for (let i = 0; i < removeItemBtns.length; i++) {
@@ -349,6 +350,7 @@ setRemoveBtnsAction = () => {
             changeNumberOfProductsByJquery()
             payBillFunc()
             changeNumberOfProductsByInput()
+            showNumberOfProductInCart()
             
         })
     }
